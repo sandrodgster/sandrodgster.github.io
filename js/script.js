@@ -1,0 +1,1 @@
+console.log("Portfólio iniciado com sucesso!");
