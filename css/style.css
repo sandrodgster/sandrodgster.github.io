@@ -55,6 +55,35 @@ h1 {
    4. HEADER
 ===================================================== */
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background-color: var(--background);
+}
+
+.logo h2 {
+    color: var(--primary);
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary);
+}
 
 
 /* =====================================================
@@ -166,11 +195,17 @@ h1 {
     border-radius: var(--radius);
     text-decoration: none;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .btn {
     background-color: var(--secondary);
     color: var(--text);
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    opacity:.9;
 }
 
 .btn-outline {
