@@ -2,7 +2,7 @@
    PROJETO ORION
    Arquivo Principal de Estilos
    Autor: Sandro Alves
-   Versão: 0.2
+   Versão: 0.3
 ===================================================== */
 
 
@@ -25,6 +25,11 @@
     --text: #F0F6FC;
     --text-light: #C9D1D9;
 
+    /* ==========================
+       TIPOGRAFIA
+    ========================== */
+
+    --font-main: Arial, Helvetica, sans-serif;
 
     /* ==========================
        ESPAÇAMENTOS
@@ -32,7 +37,7 @@
 
     --section-padding: 80px 8%;
     --container-gap: 60px;
-
+    --button-gap: 20px;
 
     /* ==========================
        BORDAS
@@ -46,14 +51,7 @@
     ========================== */
 
     --transition: .3s;
-
-
-    /* ==========================
-       TIPOGRAFIA
-    ========================== */
-
-    --font-main: Arial, Helvetica, sans-serif;
-
+    
 }
 
 
@@ -131,7 +129,7 @@ nav a:hover {
 
     padding: var(--section-padding);
 
-    gap: 60px;
+    gap: var(--container-gap);
 
 }
 
@@ -210,6 +208,10 @@ nav a:hover {
 
 }
 
+.section {
+    padding: var(--section-padding);
+}
+
 
 /* =====================================================
    6. BOTÕES
@@ -217,7 +219,7 @@ nav a:hover {
 
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: var(--button-gap);
 }
 
 .btn,
@@ -237,12 +239,17 @@ nav a:hover {
 
 .btn:hover {
     background-color: var(--primary);
-    opacity:.9;
+    opacity: .9;
 }
 
 .btn-outline {
     border: 2px solid var(--primary);
     color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--background);
 }
 
 
