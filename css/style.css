@@ -80,6 +80,11 @@ h1 {
     color: var(--primary);
 }
 
+.section {
+    padding: var(--section-padding);
+}
+
+
 
 /* =====================================================
    4. HEADER
@@ -126,8 +131,6 @@ nav a:hover {
     justify-content: space-between;
 
     align-items: center;
-
-    padding: var(--section-padding);
 
     gap: var(--container-gap);
 
@@ -208,8 +211,13 @@ nav a:hover {
 
 }
 
-.section {
-    padding: var(--section-padding);
+.hero p {
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+    
 }
 
 
@@ -252,7 +260,47 @@ nav a:hover {
     color: var(--background);
 }
 
-
 /* =====================================================
-   7. RESPONSIVIDADE
+   7. SOBRE
+===================================================== */
+
+.section-title {
+
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content {
+    width: 100%;
+}
+
+.about-item {
+
+    margin-bottom: 40px;
+
+}
+
+.about-item h3 {
+
+    color: var(--primary);
+    margin-bottom: 12px;
+
+}
+
+.about-item p {
+
+    color: var(--text-light);
+    line-height: 1.8;
+
+}
+/* =====================================================
+   8. RESPONSIVIDADE
 ===================================================== */
