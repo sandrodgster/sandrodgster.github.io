@@ -70,6 +70,10 @@
    3. ESTILOS GLOBAIS
 ===================================================== */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-main);
     background-color: var(--background);
@@ -84,6 +88,10 @@ h1 {
     padding: var(--section-padding);
 }
 
+a:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
+}
 
 
 /* =====================================================
@@ -144,7 +152,6 @@ nav a:hover {
 
 .hero-image {
 
-
     flex: 1;
 
     display: flex;
@@ -153,26 +160,28 @@ nav a:hover {
 
 }
 
+/* =====================================================
 .photo-placeholder {
-
     width: 320px;
-
     height: 320px;
-
     border-radius: 50%;
-
     border: 4px solid var(--primary);
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     font-size: 24px;
-
     color: var(--primary);
+}
+===================================================== */
 
+.profile-photo {
+    width: 320px;
+    height: 320px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
 }
 
 .hero h1 {
@@ -473,7 +482,216 @@ nav a:hover {
     opacity: .6;
 }
 
+/* =====================================================
+   10. CONTATO
+===================================================== */
+
+#contato {
+
+    background-color: var(--background);
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--container-gap);
+    align-items: start;
+}
+
+.contact-content h3 {
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-size: 32px;
+}
+
+.contact-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.contact-links {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    background-color: var(--background-light);
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.contact-label {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-card strong {
+    line-height: 1.5;
+}
 
 /* =====================================================
-   10. RESPONSIVIDADE
+   11. FOOTER
 ===================================================== */
+
+footer {
+    padding: 30px 8%;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    text-align: center;
+    border-top: 1px solid #30363d;
+}
+
+.footer-note {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* =====================================================
+   12. RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-photo {
+    width: 260px;
+    height: 260px;
+}
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    :root {
+        --section-padding: 60px 6%;
+    }
+
+    header {
+        padding: 20px 6%;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 12px 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .tag {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .section-description {
+        margin: -20px auto 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .project-content,
+    .contact-card {
+        padding: 24px;
+    }
+
+    .contact-content h3 {
+        font-size: 28px;
+    }
+
+    footer {
+        padding: 26px 6%;
+    }
+
+}
