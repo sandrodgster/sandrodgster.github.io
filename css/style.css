@@ -386,62 +386,79 @@ nav a:hover {
     text-align: center;
 }
 
+/* Grade dos projetos */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
     gap: 30px;
 }
 
+/* Card */
+
 .project-card {
+    height: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     background-color: var(--background);
     border: 1px solid #30363d;
     border-radius: var(--radius);
-    transition: var(--transition);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-6px);
     border-color: var(--primary);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
+/* Área das imagens */
+
 .project-image {
-    min-height: 220px;
-    padding: 30px;
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #21262d;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.project-image-cover {
-    padding: 0;
 }
 
 .project-image img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     display: block;
     object-fit: cover;
+    transition: transform var(--transition);
 }
 
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Imagem de logo */
+
 .project-image-logo {
-    padding: 30px;
+    padding: 20px;
 }
 
 .project-image-logo img {
-    width: 100%;
-    height: 220px;
     object-fit: contain;
 }
+
+/* Imagem que precisa destacar o topo */
 
 .project-image-top img {
     object-position: center top;
 }
+
+/* Conteúdo do card */
 
 .project-content {
     flex: 1;
@@ -469,6 +486,8 @@ nav a:hover {
     line-height: 1.7;
 }
 
+/* Links */
+
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -480,20 +499,17 @@ nav a:hover {
     color: var(--primary);
     font-weight: bold;
     text-decoration: none;
-    transition: var(--transition);
+    transition: opacity var(--transition);
 }
 
 .project-link:hover {
-    opacity: .8;
+    opacity: 0.8;
 }
 
 .project-link-disabled {
-    opacity: .6;
+    opacity: 0.6;
     cursor: default;
-}
-
-.project-link-disabled:hover {
-    opacity: .6;
+    pointer-events: none;
 }
 
 /* =====================================================
