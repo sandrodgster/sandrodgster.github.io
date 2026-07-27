@@ -128,6 +128,40 @@ nav a:hover {
     color: var(--primary);
 }
 
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+    background-color: var(--background-light);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    display: block;
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+.menu-toggle span + span {
+    margin-top: 5px;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 /* =====================================================
    5. HERO
@@ -584,15 +618,40 @@ footer {
 
 @media (max-width: 900px) {
 
-    header {
-        flex-direction: column;
-        gap: 24px;
-    }
+   header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+}
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 20px;
+}
+
+.main-nav.is-open ul {
+    display: flex;
+}
+
+.main-nav a {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+}
 
     .hero {
         flex-direction: column;
@@ -640,9 +699,9 @@ footer {
         font-size: 22px;
     }
 
-    nav ul {
-        gap: 12px 20px;
-    }
+   .main-nav ul {
+    gap: 0;
+}
 
     nav a {
         font-size: 14px;
