@@ -2,7 +2,7 @@
    PROJETO ORION
    Arquivo Principal de Estilos
    Autor: Sandro Alves
-   Versão: 1.0
+   Versão: 1.1
 ===================================================== */
 
 
@@ -51,7 +51,7 @@
     ========================== */
 
     --transition: .3s;
-    
+
 }
 
 
@@ -148,7 +148,7 @@ nav a:hover {
     transition: var(--transition);
 }
 
-.menu-toggle span + span {
+.menu-toggle span+span {
     margin-top: 5px;
 }
 
@@ -614,45 +614,116 @@ footer {
 }
 
 /* =====================================================
-   12. RESPONSIVIDADE
+   12. ESTUDO DE CASO
+===================================================== */
+
+.case-hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.case-hero h1 {
+    margin-bottom: 24px;
+    font-size: 60px;
+}
+
+.case-intro {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    color: var(--text-light);
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.case-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--button-gap);
+}
+
+.case-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.case-section:nth-of-type(even) {
+    background-color: var(--background-light);
+}
+
+.case-section h2 {
+    margin-bottom: 24px;
+    color: var(--primary);
+    font-size: 36px;
+}
+
+.case-section p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.case-list {
+    padding-left: 24px;
+    color: var(--text-light);
+    line-height: 1.9;
+}
+
+.case-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.case-technologies span {
+    padding: 10px 16px;
+    background-color: var(--background-light);
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* =====================================================
+   13. RESPONSIVIDADE
 ===================================================== */
 
 @media (max-width: 900px) {
 
-   header {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0;
-}
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+    }
 
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.main-nav {
-    width: 100%;
-}
+    .main-nav {
+        width: 100%;
+    }
 
-.main-nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding-top: 20px;
-}
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 20px;
+    }
 
-.main-nav.is-open ul {
-    display: flex;
-}
+    .main-nav.is-open ul {
+        display: flex;
+    }
 
-.main-nav a {
-    display: block;
-    padding: 12px 0;
-    text-align: center;
-}
+    .main-nav a {
+        display: block;
+        padding: 12px 0;
+        text-align: center;
+    }
 
     .hero {
         flex-direction: column;
@@ -674,7 +745,7 @@ footer {
     .profile-photo {
         width: 260px;
         height: 260px;
-}
+    }
 
     .hero h1 {
         font-size: 48px;
@@ -700,9 +771,9 @@ footer {
         font-size: 22px;
     }
 
-   .main-nav ul {
-    gap: 0;
-}
+    .main-nav ul {
+        gap: 0;
+    }
 
     nav a {
         font-size: 14px;
@@ -718,6 +789,22 @@ footer {
 
     .hero h2 {
         font-size: 22px;
+    }
+
+    .case-hero h1 {
+        font-size: 40px;
+    }
+
+    .case-intro {
+        font-size: 18px;
+    }
+
+    .case-actions {
+        flex-direction: column;
+    }
+
+    .case-section h2 {
+        font-size: 30px;
     }
 
     .tag {
