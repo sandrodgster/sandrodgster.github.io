@@ -2,7 +2,7 @@
    PROJETO ORION
    Arquivo Principal de Estilos
    Autor: Sandro Alves
-   Versão: 0.3
+   Versão: 1.0
 ===================================================== */
 
 
@@ -159,20 +159,6 @@ nav a:hover {
     justify-content: center;
 
 }
-
-/* =====================================================
-.photo-placeholder {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    border: 4px solid var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: var(--primary);
-}
-===================================================== */
 
 .profile-photo {
     width: 320px;
@@ -572,6 +558,7 @@ nav a:hover {
 
 .contact-card strong {
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 /* =====================================================
@@ -625,8 +612,8 @@ footer {
     }
 
     .profile-photo {
-    width: 260px;
-    height: 260px;
+        width: 260px;
+        height: 260px;
 }
 
     .hero h1 {
@@ -722,6 +709,22 @@ footer {
 
     footer {
         padding: 26px 6%;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 
 }
