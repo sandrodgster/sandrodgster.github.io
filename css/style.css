@@ -88,7 +88,8 @@ h1 {
     padding: var(--section-padding);
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline: 3px solid var(--primary);
     outline-offset: 4px;
 }
