@@ -14,6 +14,7 @@ https://sandrodgster.github.io
 
 - HTML5
 - CSS3
+- JavaScript
 - Git
 - GitHub
 - GitHub Pages
@@ -30,6 +31,19 @@ https://sandrodgster.github.io
 - Foco visível para navegação por teclado
 - Suporte à preferência de redução de movimento
 - Descrição básica para mecanismos de busca
+- Layout responsivo
+- Menu mobile acessível
+- Ano automático no Footer
+- Navegação por teclado
+- Foco visível
+- Suporte à redução de movimentos
+- Estudos de caso individuais para os principais projetos
+
+## Estudos de caso
+
+- Projeto Orion
+- Agência 4V Comunicação
+- Revista NaMídia
 
 ## Estrutura de pastas
 
@@ -71,11 +85,11 @@ Durante o desenvolvimento deste projeto, pratiquei:
 
 ## Próximas melhorias
 
-- Menu mobile com JavaScript
-- Estudos de caso individuais
-- Novos projetos e links reais
-- Melhorias de desempenho
-- Versão do portfólio em inglês
+- Criar estudo de caso da Identidade Visual 4V
+- Criar estudo de caso da Loja Universo 4V
+- Criar estudo de caso da campanha para redes sociais
+- Melhorar a apresentação das imagens dos projetos
+- Realizar auditoria de desempenho e acessibilidade
 
 ## Autor
 
