@@ -22,21 +22,16 @@ https://sandrodgster.github.io
 ## Recursos do projeto
 
 - Estrutura HTML semântica
-- Layout responsivo
-- Navegação por âncoras
-- Rolagem suave
+- Layout responsivo para desktop, tablet e celular
+- Navegação por âncoras e rolagem suave
+- Menu mobile acessível
 - Cards de habilidades e projetos
 - Imagens otimizadas com carregamento preguiçoso
 - Links para e-mail, LinkedIn e GitHub
-- Foco visível para navegação por teclado
+- Navegação por teclado e foco visível
 - Suporte à preferência de redução de movimento
 - Descrição básica para mecanismos de busca
-- Layout responsivo
-- Menu mobile acessível
-- Ano automático no Footer
-- Navegação por teclado
-- Foco visível
-- Suporte à redução de movimentos
+- Ano automático no footer
 - Estudos de caso individuais para os principais projetos
 
 ## Estudos de caso

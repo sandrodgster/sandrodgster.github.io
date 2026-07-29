@@ -2,7 +2,7 @@
    PROJETO ORION
    Arquivo Principal de Estilos
    Autor: Sandro Alves
-   Versão: 1.1
+   Versão: 1.2
 ===================================================== */
 
 
@@ -798,11 +798,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    }
-
     .case-summary {
         grid-template-columns: repeat(2, 1fr);
     }
+}
 
 @media (max-width: 600px) {
 
