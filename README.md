@@ -38,7 +38,10 @@ https://sandrodgster.github.io
 
 - Projeto Orion
 - Agência 4V Comunicação
+- Identidade Visual 4V Comunicação
 - Revista NaMídia
+- Loja Universo 4V
+- Campanha para Redes Sociais
 
 ## Estrutura de pastas
 
@@ -80,11 +83,10 @@ Durante o desenvolvimento deste projeto, pratiquei:
 
 ## Próximas melhorias
 
-- Criar estudo de caso da Identidade Visual 4V
-- Criar estudo de caso da Loja Universo 4V
-- Criar estudo de caso da campanha para redes sociais
 - Melhorar a apresentação das imagens dos projetos
 - Realizar auditoria de desempenho e acessibilidade
+- Adicionar favicon e metadados para compartilhamento
+- Refinar animações e transições
 
 ## Autor
 
