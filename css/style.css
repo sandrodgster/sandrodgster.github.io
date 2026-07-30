@@ -2,7 +2,7 @@
    PROJETO ORION
    Arquivo Principal de Estilos
    Autor: Sandro Alves
-   Versão: 1.2
+   Versão: 1.4
 ===================================================== */
 
 
@@ -107,9 +107,31 @@ header {
     background-color: var(--background);
 }
 
-.logo h2 {
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.logo img {
+    width: 56px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo span {
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: color var(--transition);
+}
+
+.logo:hover span {
     color: var(--primary);
-    font-size: 24px;
 }
 
 nav ul {
@@ -813,8 +835,16 @@ footer {
         padding: 20px 6%;
     }
 
-    .logo h2 {
-        font-size: 22px;
+    .logo {
+        gap: 9px;
+    }
+
+    .logo img {
+        width: 46px;
+    }
+
+    .logo span {
+        font-size: 19px;
     }
 
     .main-nav ul {

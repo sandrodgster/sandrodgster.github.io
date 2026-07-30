@@ -50,10 +50,23 @@ sandrodgster.github.io/
 ├── css/
 │   └── style.css
 ├── images/
+│   ├── favicon/
+│   │   ├── favicon.ico
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   ├── apple-touch-icon.png
+│   │   └── favicon.svg
 │   ├── perfil/
 │   └── projetos/
 ├── js/
 │   └── script.js
+├── projetos/
+│   ├── agencia-4v.html
+│   ├── identidade-4v.html
+│   ├── loja-universo-4v.html
+│   ├── projeto-orion.html
+│   ├── revista-namidia.html
+│   └── social-media.html
 ├── index.html
 └── README.md
 ```
@@ -87,6 +100,7 @@ Durante o desenvolvimento deste projeto, pratiquei:
 - Realizar auditoria de desempenho e acessibilidade
 - Adicionar favicon e metadados para compartilhamento
 - Refinar animações e transições
+- Adicionar favicon e metadados para compartilhamento
 
 ## Autor
 
