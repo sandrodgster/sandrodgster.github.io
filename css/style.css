@@ -17,7 +17,7 @@
     ========================== */
 
     --primary: #58A6FF;
-    --secondary: #238636;
+    --secondary: #1F7A32;
 
     --background: #0D1117;
     --background-light: #161B22;
@@ -100,6 +100,9 @@ button:focus-visible {
 ===================================================== */
 
 header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,32 +192,27 @@ nav a:hover {
 /* =====================================================
    5. HERO
 ===================================================== */
+
 .hero {
-
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: var(--container-gap);
-
 }
 
 .hero-content {
-
     flex: 1;
-
+    max-width: 650px;
 }
 
 .hero-image {
-
     flex: 1;
-
+    max-width: 420px;
     display: flex;
-
     justify-content: center;
-
 }
 
 .profile-photo {
@@ -228,11 +226,9 @@ nav a:hover {
 }
 
 .hero h1 {
-
-    font-size: 60px;
-
     margin-bottom: 20px;
-
+    color: var(--text);
+    font-size: 60px;
 }
 
 .hero h1 {
@@ -372,13 +368,12 @@ nav a:hover {
 }
 
 .skills-grid {
-
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
     gap: 24px;
-
 }
 
 .skill-card {
@@ -436,6 +431,9 @@ nav a:hover {
 /* Grade dos projetos */
 
 .projects-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     align-items: stretch;
@@ -666,6 +664,7 @@ footer {
 
 .case-hero h1 {
     margin-bottom: 24px;
+    color: var(--primary);
     font-size: 60px;
 }
 
@@ -777,12 +776,16 @@ footer {
     }
 
     .main-nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding-top: 20px;
-    }
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin-top: 20px;
+    padding: 16px;
+    background-color: var(--background-light);
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+}
 
     .main-nav.is-open ul {
         display: flex;
@@ -790,8 +793,14 @@ footer {
 
     .main-nav a {
         display: block;
-        padding: 12px 0;
+        padding: 14px 12px;
+        border-radius: 8px;
         text-align: center;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+        background-color: var(--background-light);
     }
 
     .hero {
@@ -801,10 +810,12 @@ footer {
 
     .hero-content {
         order: 2;
+        max-width: 760px;
     }
 
     .hero-image {
         order: 1;
+        max-width: none;
     }
 
     .buttons {
@@ -935,6 +946,10 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-image {
+    height: 200px;
+}
 
     .skill-card,
     .project-content,
