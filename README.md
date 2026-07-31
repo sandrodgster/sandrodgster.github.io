@@ -56,6 +56,8 @@ sandrodgster.github.io/
 │   │   ├── favicon-32x32.png
 │   │   ├── apple-touch-icon.png
 │   │   └── favicon.svg
+|   └── marca/
+|   |    └── monograma-sa.svg
 │   ├── perfil/
 │   └── projetos/
 ├── js/
@@ -100,7 +102,7 @@ Durante o desenvolvimento deste projeto, pratiquei:
 - Realizar auditoria de desempenho e acessibilidade
 - Adicionar favicon e metadados para compartilhamento
 - Refinar animações e transições
-- Adicionar favicon e metadados para compartilhamento
+
 
 ## Autor
 

@@ -235,6 +235,10 @@ nav a:hover {
 
 }
 
+.hero h1 {
+    color: var(--text);
+}
+
 .hero h1 span {
 
     color: var(--primary);
