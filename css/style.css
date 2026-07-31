@@ -642,15 +642,20 @@ footer {
 ===================================================== */
 
 .case-hero {
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 40px;
     text-align: center;
 }
 
 .case-cover {
-    max-width: 1000px;
-    margin: 40px auto;
+    width: 100%;
+    max-width: 1100px;
+    margin: 36px auto 32px;
     overflow: hidden;
+    background-color: #21262d;
     border: 1px solid #30363d;
     border-radius: var(--radius);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
@@ -681,11 +686,18 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--button-gap);
+    margin-top: 8px;
+}
+
+.case-actions .btn,
+.case-actions .btn-outline {
+    min-width: 220px;
+    text-align: center;
 }
 
 .case-section {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto 24px;
     padding: 40px;
     background-color: var(--background-light);
     border: 1px solid #30363d;
@@ -699,11 +711,13 @@ footer {
 }
 
 .case-section p {
+    max-width: 780px;
     color: var(--text-light);
     line-height: 1.8;
 }
 
 .case-list {
+    max-width: 780px;
     padding-left: 24px;
     color: var(--text-light);
     line-height: 1.9;
@@ -717,7 +731,7 @@ footer {
 
 .case-technologies span {
     padding: 10px 16px;
-    background-color: var(--background-light);
+    background-color: var(--background);
     border: 1px solid #30363d;
     border-radius: var(--radius);
     color: var(--primary);
@@ -725,14 +739,20 @@ footer {
 }
 
 .case-summary {
+    width: 84%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .case-summary-item {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 24px;
     background-color: var(--background-light);
     border: 1px solid #30363d;
@@ -776,16 +796,16 @@ footer {
     }
 
     .main-nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    margin-top: 20px;
-    padding: 16px;
-    background-color: var(--background-light);
-    border: 1px solid #30363d;
-    border-radius: var(--radius);
-}
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin-top: 20px;
+        padding: 16px;
+        background-color: var(--background-light);
+        border: 1px solid #30363d;
+        border-radius: var(--radius);
+    }
 
     .main-nav.is-open ul {
         display: flex;
@@ -910,6 +930,46 @@ footer {
         margin: 30px auto;
     }
 
+    .case-hero {
+        padding-top: 40px;
+        padding-bottom: 32px;
+    }
+
+    .case-summary {
+        width: 88%;
+        margin-bottom: 28px;
+    }
+
+    .case-summary-item {
+        min-height: auto;
+    }
+
+    .case-section {
+        margin-bottom: 18px;
+    }
+
+    .case-cover {
+        margin: 28px auto 24px;
+    }
+
+    .case-actions {
+        margin-top: 0;
+    }
+
+    .case-actions .btn,
+    .case-actions .btn-outline {
+        min-width: 0;
+    }
+
+    .case-technologies {
+        gap: 10px;
+    }
+
+    .case-technologies span {
+        padding: 9px 12px;
+        font-size: 14px;
+    }
+
     .tag {
         font-size: 14px;
         line-height: 1.5;
@@ -948,8 +1008,8 @@ footer {
     }
 
     .project-image {
-    height: 200px;
-}
+        height: 200px;
+    }
 
     .skill-card,
     .project-content,
