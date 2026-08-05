@@ -229,29 +229,57 @@ A página principal e os estudos de caso possuem:
 
 ## Auditoria Lighthouse
 
-A versão `v1.4.0` foi testada com o Lighthouse e alcançou:
+A versão `v1.5.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
+
+### Página principal
 
 ```text
+Mobile
 Performance: 100
 Acessibilidade: 100
-Boas práticas: 98
+Boas práticas: 100
+SEO: 100
+
+Desktop
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
 SEO: 100
 ```
+
+### Estudo de caso da Loja Universo 4V
+
+```text
+Mobile
+Performance: 96
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
+
+Desktop
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
+```
+
+A auditoria mobile da Loja Universo 4V foi repetida para confirmar o resultado, mantendo as mesmas pontuações.
 
 Também foram realizados testes de:
 
 * responsividade;
 * navegação por teclado;
-* menu mobile;
-* carregamento de imagens;
+* funcionamento do menu mobile;
+* carregamento das imagens;
+* galerias em desktop, tablet e celular;
 * links internos;
 * Console do navegador;
 * arquivos não encontrados na aba Network;
-* visualização das galerias em desktop, tablet e celular;
+* adaptação de imagens horizontais e verticais;
 * carregamento das imagens complementares;
-* adaptação de imagens verticais e horizontais.
+* exibição de legendas e textos alternativos.
 
-Uma nova auditoria poderá ser realizada após a publicação completa da versão `v1.5.0`.
+Os resultados confirmam a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.5.0`.
 
 ## Aprendizados
 
