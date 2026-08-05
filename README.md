@@ -6,9 +6,9 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**v1.4.0 — Refinamento visual, responsivo e integração do Projeto Polaris**
+**Versão atual:** v1.5.0 — Galerias responsivas e estudos de caso aprimorados
 
-Esta versão inclui melhorias na identidade visual, estrutura responsiva, acessibilidade, estudos de caso, metadados e experiência de navegação.
+Esta versão amplia a apresentação visual dos projetos com galerias responsivas, imagens complementares, legendas, textos alternativos e conteúdos mais completos nos estudos de caso.
 
 ## Visualizar o projeto
 
@@ -35,9 +35,16 @@ https://sandrodgster.github.io
 * Navegação por teclado com foco visível
 * Suporte à preferência de redução de movimento
 * Cards de habilidades, projetos e contatos
-* Estudos de caso individuais
+* Seis estudos de caso individuais
+* Galerias responsivas nos estudos de caso
+* Imagens organizadas em pastas específicas para cada projeto
+* Suporte a imagens horizontais e verticais
+* Exibição de artes completas sem cortes
+* Legendas descritivas nas galerias
+* Textos alternativos nas imagens
 * Imagens responsivas com dimensões declaradas
-* Carregamento preguiçoso nas imagens dos projetos
+* Carregamento preguiçoso nas imagens complementares
+* Decodificação assíncrona de imagens
 * Ano automático no rodapé
 * Metadados para mecanismos de busca
 * Open Graph e Twitter Card
@@ -56,13 +63,44 @@ O portfólio possui seis estudos de caso:
 * Loja Universo 4V
 * Campanha para Redes Sociais
 
-Cada estudo apresenta:
+Cada estudo pode apresentar:
 
 * visão geral;
 * desafio do projeto;
 * soluções desenvolvidas;
+* estratégia ou processo de criação;
+* galeria de imagens;
 * tecnologias e competências;
-* principais aprendizados.
+* resultados ou principais aprendizados.
+
+## Galerias dos projetos
+
+As galerias foram desenvolvidas com uma estrutura reutilizável para manter consistência entre os estudos de caso.
+
+Entre os recursos implementados estão:
+
+* imagem principal em destaque;
+* grade com imagens complementares;
+* adaptação para uma coluna em celulares;
+* suporte a imagens verticais;
+* preservação de artes que não devem ser cortadas;
+* legendas com contexto sobre cada imagem;
+* textos alternativos para acessibilidade;
+* carregamento preguiçoso com `loading="lazy"`;
+* decodificação assíncrona com `decoding="async"`.
+
+As principais classes utilizadas são:
+
+```css
+.case-gallery
+.case-gallery-header
+.case-gallery-featured
+.case-gallery-featured-portrait
+.case-gallery-grid
+.case-gallery-item
+.case-gallery-item-contain
+.case-gallery-item-mobile
+```
 
 ## Estrutura de pastas
 
@@ -83,6 +121,30 @@ sandrodgster.github.io/
 │   ├── perfil/
 │   │   └── sandro-alves.jpg
 │   └── projetos/
+│       ├── agencia-4v/
+│       │   ├── agencia-4v-desktop.jpg
+│       │   ├── agencia-4v-mobile.jpg
+│       │   └── agencia-4v-secoes.jpg
+│       ├── identidade-4v/
+│       │   ├── identidade-4v-aplicacoes.jpg
+│       │   ├── identidade-4v-elementos.jpg
+│       │   └── identidade-4v-marca.jpg
+│       ├── loja-universo-4v/
+│       │   ├── loja-universo-home.jpg
+│       │   ├── loja-universo-mobile.jpg
+│       │   └── loja-universo-produtos.jpg
+│       ├── orion/
+│       │   ├── orion-desktop.jpg
+│       │   ├── orion-mobile.jpg
+│       │   └── orion-projetos.jpg
+│       ├── revista-namidia/
+│       │   ├── revista-namidia-capa.jpg
+│       │   ├── revista-namidia-diagramacao.jpg
+│       │   └── revista-namidia-paginas.jpg
+│       ├── social-media/
+│       │   ├── social-media-campanha.jpg
+│       │   ├── social-media-feed.jpg
+│       │   └── social-media-stories.jpg
 │       ├── agencia-4v-site.jpg
 │       ├── identidade-4v.png
 │       ├── loja-universo-4v.jpg
@@ -127,7 +189,10 @@ Entre os ajustes responsivos estão:
 * redimensionamento da foto de perfil;
 * reorganização dos cards de resumo;
 * botões em largura total no celular;
-* ajuste das capas dos estudos de caso.
+* ajuste das capas dos estudos de caso;
+* transformação das galerias em uma coluna;
+* redimensionamento das imagens verticais;
+* preservação de artes e capturas sem cortes.
 
 ## Acessibilidade
 
@@ -135,6 +200,7 @@ O projeto inclui recursos básicos de acessibilidade:
 
 * HTML semântico;
 * textos alternativos em imagens;
+* legendas nas imagens das galerias;
 * atributos ARIA no menu mobile;
 * estado atualizado com `aria-expanded`;
 * foco visível para teclado;
@@ -142,7 +208,9 @@ O projeto inclui recursos básicos de acessibilidade:
 * retorno do foco ao botão do menu;
 * suporte a `prefers-reduced-motion`;
 * contraste visual revisado;
-* áreas de clique adaptadas para dispositivos móveis.
+* áreas de clique adaptadas para dispositivos móveis;
+* definição de largura e altura nas imagens;
+* identificação do idioma principal da página.
 
 ## SEO e compartilhamento
 
@@ -154,6 +222,7 @@ A página principal e os estudos de caso possuem:
 * metadados Open Graph;
 * Twitter Card;
 * imagem de compartilhamento;
+* texto alternativo para imagem de compartilhamento;
 * identificação de idioma e localidade;
 * favicon;
 * cor do navegador em dispositivos compatíveis.
@@ -177,7 +246,12 @@ Também foram realizados testes de:
 * carregamento de imagens;
 * links internos;
 * Console do navegador;
-* arquivos não encontrados na aba Network.
+* arquivos não encontrados na aba Network;
+* visualização das galerias em desktop, tablet e celular;
+* carregamento das imagens complementares;
+* adaptação de imagens verticais e horizontais.
+
+Uma nova auditoria poderá ser realizada após a publicação completa da versão `v1.5.0`.
 
 ## Aprendizados
 
@@ -188,29 +262,50 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * responsividade com media queries;
 * manipulação do DOM;
 * tratamento de imagens com `object-fit`;
+* criação de componentes visuais reutilizáveis;
+* organização de galerias responsivas;
+* adaptação de imagens horizontais e verticais;
 * acessibilidade básica;
 * metadados e compartilhamento;
 * versionamento com Git;
 * organização de commits;
 * criação de tags de versão;
 * resolução de conflitos;
+* sincronização do projeto em diferentes computadores;
 * publicação com GitHub Pages;
 * integração entre design e desenvolvimento front-end.
 
 ## Histórico recente
 
-### v1.4.0
+### v1.5.0 — Galerias e estudos de caso aprimorados
 
-* refinamento da hierarquia visual;
-* melhoria do contraste;
-* centralização dos conteúdos em telas grandes;
-* aprimoramento do menu mobile;
-* revisão das capas dos projetos;
-* reorganização dos estudos de caso;
-* melhoria dos cards de resumo;
-* refinamento dos botões e tecnologias;
-* integração visual do Projeto Polaris;
-* auditoria de desempenho, acessibilidade e SEO.
+* Adição de galerias responsivas aos seis estudos de caso.
+* Organização das imagens em pastas específicas para cada projeto.
+* Criação de uma estrutura reutilizável para galerias.
+* Suporte a imagens horizontais, verticais e artes sem cortes.
+* Inclusão de legendas nas imagens.
+* Inclusão de textos alternativos para acessibilidade.
+* Uso de carregamento preguiçoso nas imagens complementares.
+* Aprimoramento do estudo de caso de Redes Sociais.
+* Aprimoramento do estudo de caso da Revista NaMídia.
+* Aprimoramento do estudo de caso da Loja Universo 4V.
+* Melhoria da apresentação visual em diferentes tamanhos de tela.
+* Ampliação da documentação do projeto.
+
+### v1.4.0 — Refinamento visual e integração do Projeto Polaris
+
+* Refinamento da hierarquia visual.
+* Melhoria do contraste.
+* Centralização dos conteúdos em telas grandes.
+* Aprimoramento do menu mobile.
+* Revisão das capas dos projetos.
+* Reorganização dos estudos de caso.
+* Melhoria dos cards de resumo.
+* Refinamento dos botões e tecnologias.
+* Inclusão de metadados individuais nos estudos de caso.
+* Definição das dimensões das imagens.
+* Integração visual do Projeto Polaris.
+* Auditoria de desempenho, acessibilidade e SEO.
 
 ### v1.3.0
 
@@ -218,18 +313,20 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ### v1.2.0
 
-* inclusão e organização dos estudos de caso;
-* atualização da documentação;
-* evolução da estrutura inicial do portfólio.
+* Inclusão e organização dos estudos de caso.
+* Atualização da documentação.
+* Evolução da estrutura inicial do portfólio.
 
 ## Próximas melhorias
 
-* produzir novas imagens e apresentações para os estudos de caso;
-* adicionar projetos futuros ao portfólio;
-* ampliar os conhecimentos em JavaScript;
-* explorar animações leves sem comprometer a acessibilidade;
-* realizar novas auditorias após atualizações importantes;
-* avaliar futuramente a utilização de um domínio personalizado.
+* Realizar uma nova auditoria Lighthouse na versão `v1.5.0`.
+* Revisar o peso e a otimização das novas imagens.
+* Adicionar projetos futuros ao portfólio.
+* Ampliar os conhecimentos em JavaScript.
+* Explorar animações leves sem comprometer a acessibilidade.
+* Avaliar a implementação de ampliação de imagens nas galerias.
+* Avaliar futuramente a utilização de um domínio personalizado.
+* Continuar a evolução da identidade pessoal do Projeto Polaris.
 
 ## Autor
 
