@@ -881,7 +881,112 @@ footer {
 }
 
 /* =====================================================
-   14. RESPONSIVIDADE
+   14. LIGHTBOX DAS GALERIAS
+===================================================== */
+
+.lightbox-trigger {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: zoom-in;
+}
+
+.lightbox-trigger:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: -3px;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(1, 4, 9, 0.92);
+}
+
+.lightbox-dialog {
+    position: relative;
+    width: min(1100px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-light);
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-image-wrapper {
+    min-height: 0;
+    padding: 20px;
+    overflow: auto;
+    display: grid;
+    place-items: center;
+    background-color: var(--background);
+}
+
+.lightbox-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 180px);
+    display: block;
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    padding: 16px 72px 18px 20px;
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background-color: var(--background-light);
+    border: 1px solid #30363d;
+    border-radius: 50%;
+    color: var(--text);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--background);
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* =====================================================
+   15. RESPONSIVIDADE
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -1085,35 +1190,36 @@ footer {
         padding: 9px 12px;
         font-size: 14px;
     }
+
     .case-gallery {
-    width: 88%;
-    margin-bottom: 18px;
-    padding: 28px;
+        width: 88%;
+        margin-bottom: 18px;
+        padding: 28px;
     }
 
     .case-gallery-header {
-    margin-bottom: 24px;
+        margin-bottom: 24px;
     }
 
     .case-gallery-header h2 {
-    font-size: 30px;
+        font-size: 30px;
     }
 
     .case-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 
     .case-gallery-featured {
-    margin-bottom: 18px;
+        margin-bottom: 18px;
     }
 
     .case-gallery-item img {
-    height: auto;
+        height: auto;
     }
 
     .case-gallery figcaption {
-    padding: 14px 16px;
+        padding: 14px 16px;
     }
 
     .tag {
@@ -1167,8 +1273,34 @@ footer {
         font-size: 28px;
     }
 
-    footer {
+        footer {
         padding: 26px 6%;
+    }
+
+    .lightbox {
+        padding: 12px;
+    }
+
+    .lightbox-dialog {
+        max-height: calc(100vh - 24px);
+    }
+
+    .lightbox-image-wrapper {
+        padding: 12px;
+    }
+
+    .lightbox-image {
+        max-height: calc(100vh - 150px);
+    }
+
+    .lightbox-caption {
+        padding: 14px 60px 16px 16px;
+        font-size: 14px;
+    }
+
+    .lightbox-close {
+        top: 8px;
+        right: 8px;
     }
 
 }
