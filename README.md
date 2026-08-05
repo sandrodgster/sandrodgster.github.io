@@ -10,6 +10,12 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 Esta versão amplia a apresentação visual dos projetos com galerias responsivas, imagens complementares, legendas, textos alternativos e conteúdos mais completos nos estudos de caso.
 
+## Ciclo em desenvolvimento
+
+**Próxima versão:** v1.6.0 — Interatividade e acessibilidade das galerias
+
+O novo ciclo começou com a implementação de um lightbox acessível para ampliar as imagens dos estudos de caso, mantendo navegação por teclado, controle de foco e adaptação para diferentes tamanhos de tela.
+
 ## Visualizar o projeto
 
 Acesse o portfólio publicado:
@@ -37,6 +43,12 @@ https://sandrodgster.github.io
 * Cards de habilidades, projetos e contatos
 * Seis estudos de caso individuais
 * Galerias responsivas nos estudos de caso
+- Lightbox para ampliação das imagens das galerias
+- Abertura das imagens por clique ou teclado
+- Fechamento do lightbox pelo botão, tecla `Escape` ou fundo escuro
+- Retorno do foco para a imagem que iniciou a visualização
+- Bloqueio da rolagem da página durante a ampliação
+- Implementação sem bibliotecas externas
 * Imagens organizadas em pastas específicas para cada projeto
 * Suporte a imagens horizontais e verticais
 * Exibição de artes completas sem cortes
@@ -101,6 +113,26 @@ As principais classes utilizadas são:
 .case-gallery-item-contain
 .case-gallery-item-mobile
 ```
+
+## Lightbox acessível
+
+As imagens das galerias podem ser abertas em uma visualização ampliada por meio de um lightbox desenvolvido com JavaScript e CSS, sem dependências externas.
+
+O recurso inclui:
+
+* abertura por clique;
+* abertura pelas teclas `Tab` e `Enter`;
+* fechamento pelo botão de fechar;
+* fechamento pela tecla `Escape`;
+* fechamento ao selecionar o fundo escuro;
+* bloqueio da rolagem da página enquanto o lightbox está aberto;
+* retorno do foco ao elemento que iniciou a visualização;
+* uso de `role="dialog"` e `aria-modal="true"`;
+* legenda correspondente à imagem ampliada;
+* preservação do texto alternativo da imagem;
+* adaptação para desktop, tablet e celular.
+
+O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-gallery`, cria os controles necessários e adiciona o lightbox ao documento.
 
 ## Estrutura de pastas
 
@@ -302,6 +334,13 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * sincronização do projeto em diferentes computadores;
 * publicação com GitHub Pages;
 * integração entre design e desenvolvimento front-end.
+- criação dinâmica de elementos com JavaScript;
+- gerenciamento de foco em componentes interativos;
+- desenvolvimento de diálogos acessíveis;
+- controle da rolagem da página;
+- tratamento de eventos de clique e teclado;
+- desenvolvimento de componentes sem bibliotecas externas;
+- uso de branches para implementar e testar novos recursos.
 
 ## Histórico recente
 
@@ -352,7 +391,9 @@ Versão anterior mantida como registro histórico no repositório remoto.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
 * Explorar animações leves sem comprometer a acessibilidade.
-* Avaliar a implementação de ampliação de imagens nas galerias.
+- Realizar uma auditoria Lighthouse após a conclusão da versão `v1.6.0`.
+- Avaliar navegação entre imagens pelo lightbox.
+- Avaliar indicadores de imagem atual e total.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
 
