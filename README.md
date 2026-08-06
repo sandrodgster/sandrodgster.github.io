@@ -43,18 +43,20 @@ https://sandrodgster.github.io
 * Cards de habilidades, projetos e contatos
 * Seis estudos de caso individuais
 * Galerias responsivas nos estudos de caso
-- Lightbox para ampliação das imagens das galerias
-- Abertura das imagens por clique ou teclado
-- Fechamento do lightbox pelo botão, tecla `Escape` ou fundo escuro
-- Retorno do foco para a imagem que iniciou a visualização
-- Bloqueio da rolagem da página durante a ampliação
-- Implementação sem bibliotecas externas
-- Navegação entre imagens pelos botões Anterior e Próxima
-- Navegação pelas teclas de seta `←` e `→`
-- Contador com a posição atual da imagem
-- Atualização automática da legenda durante a navegação
-- Navegação circular entre a primeira e a última imagem
-- Foco mantido dentro dos controles do diálogo
+* Lightbox para ampliação das imagens das galerias
+    * Abertura das imagens por clique ou teclado
+    * Fechamento pelo botão, pela tecla `Escape` ou pelo fundo escuro
+    * Retorno do foco para a imagem que iniciou a visualização
+    * Bloqueio da rolagem da página durante a ampliação
+    * Implementação sem bibliotecas externas
+    * Navegação pelos botões Anterior e Próxima
+    * Navegação pelas teclas de seta `←` e `→`
+    * Contador com a posição atual da imagem
+    * Atualização automática da legenda durante a navegação
+    * Navegação circular entre a primeira e a última imagem
+    * Foco mantido dentro dos controles do diálogo
+    * Gestos de deslizar em dispositivos com tela sensível ao toque
+    * Preservação dos movimentos verticais naturais da página
 * Imagens organizadas em pastas específicas para cada projeto
 * Suporte a imagens horizontais e verticais
 * Exibição de artes completas sem cortes
@@ -126,25 +128,25 @@ As imagens das galerias podem ser abertas em uma visualização ampliada por mei
 
 O recurso inclui:
 
-- abertura por clique;
-- abertura pelas teclas `Tab` e `Enter`;
-- fechamento pelo botão de fechar;
-- fechamento pela tecla `Escape`;
-- fechamento ao selecionar o fundo escuro;
-- navegação pelos botões Anterior e Próxima;
-- navegação pelas teclas de seta `←` e `→`;
-- navegação circular entre a primeira e a última imagem;
-- contador com a posição atual e o total de imagens;
-- atualização sincronizada da imagem, legenda e texto alternativo;
-- bloqueio da rolagem enquanto o diálogo está aberto;
-- manutenção do foco nos controles do lightbox;
-- retorno do foco ao elemento que iniciou a visualização;
-- uso de `role="dialog"` e `aria-modal="true"`;
-- adaptação para desktop, tablet e celular.
-- navegação por gestos de deslizar em dispositivos com tela sensível ao toque;
-- avanço para a próxima imagem ao deslizar para a esquerda;
-- retorno à imagem anterior ao deslizar para a direita;
-- preservação dos movimentos verticais naturais da página;
+* abertura por clique;
+* acesso por teclado com `Tab` e abertura pela tecla `Enter`;
+* fechamento pelo botão de fechar;
+* fechamento pela tecla `Escape`;
+* fechamento ao clicar no fundo escuro;
+* navegação pelos botões Anterior e Próxima;
+* navegação pelas teclas de seta `←` e `→`;
+* navegação circular entre a primeira e a última imagem;
+* contador com a posição atual e o total de imagens;
+* atualização sincronizada da imagem, da legenda e do texto alternativo;
+* navegação por gestos de deslizar em dispositivos com tela sensível ao toque;
+* avanço para a próxima imagem ao deslizar para a esquerda;
+* retorno à imagem anterior ao deslizar para a direita;
+* preservação dos movimentos verticais naturais da página;
+* bloqueio da rolagem enquanto o diálogo está aberto;
+* manutenção do foco nos controles do lightbox;
+* retorno do foco ao elemento que iniciou a visualização;
+* uso de `role="dialog"` e `aria-modal="true"`;
+* adaptação para desktop, tablet e celular.
 
 O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-gallery`, cria os botões de abertura e adiciona ao documento o diálogo com seus controles de navegação.
 
@@ -252,6 +254,9 @@ O projeto inclui recursos básicos de acessibilidade:
 * foco visível para teclado;
 * fechamento do menu pela tecla `Escape`;
 * retorno do foco ao botão do menu;
+* uso de `role="dialog"` e `aria-modal="true"` no lightbox;
+* manutenção do foco dentro do diálogo;
+* retorno do foco ao elemento que abriu o lightbox;
 * suporte a `prefers-reduced-motion`;
 * contraste visual revisado;
 * áreas de clique adaptadas para dispositivos móveis;
@@ -347,24 +352,24 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * resolução de conflitos;
 * sincronização do projeto em diferentes computadores;
 * publicação com GitHub Pages;
-* integração entre design e desenvolvimento front-end.
-- criação dinâmica de elementos com JavaScript;
-- gerenciamento de foco em componentes interativos;
-- desenvolvimento de diálogos acessíveis;
-- controle da rolagem da página;
-- tratamento de eventos de clique e teclado;
-- desenvolvimento de componentes sem bibliotecas externas;
-- uso de branches para implementar e testar novos recursos.
-- navegação circular em coleções de imagens;
-- controle de índices em JavaScript;
-- atualização dinâmica de imagens, legendas e contadores;
-- criação de armadilha de foco para diálogos;
-- navegação por teclas direcionais;
-- diagnóstico de cache e publicação no GitHub Pages;
-- tratamento dos eventos `touchstart` e `touchend`;
-- identificação da direção e da distância dos gestos;
-- diferenciação entre movimentos horizontais e verticais;
-- uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis;
+* integração entre design e desenvolvimento front-end;
+* criação dinâmica de elementos com JavaScript;
+* gerenciamento de foco em componentes interativos;
+* desenvolvimento de diálogos acessíveis;
+* controle da rolagem da página;
+* tratamento de eventos de clique e teclado;
+* desenvolvimento de componentes sem bibliotecas externas;
+* uso de branches para implementar e testar novos recursos;
+* navegação circular em coleções de imagens;
+* controle de índices em JavaScript;
+* atualização dinâmica de imagens, legendas e contadores;
+* criação de armadilha de foco para diálogos;
+* navegação por teclas direcionais;
+* diagnóstico de cache e publicação no GitHub Pages;
+* tratamento dos eventos `touchstart` e `touchend`;
+* identificação da direção e da distância dos gestos;
+* diferenciação entre movimentos horizontais e verticais;
+* uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis.
 
 ## Histórico recente
 
@@ -410,14 +415,13 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
-* Realizar uma nova auditoria Lighthouse na versão `v1.5.0`.
+* Realizar uma nova auditoria Lighthouse após a conclusão da versão `v1.6.0`.
 * Revisar o peso e a otimização das novas imagens.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
 * Explorar animações leves sem comprometer a acessibilidade.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
-- Realizar uma nova auditoria Lighthouse após a conclusão da versão `v1.6.0`.
 
 ## Autor
 
