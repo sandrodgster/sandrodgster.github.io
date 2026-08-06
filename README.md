@@ -6,15 +6,9 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.5.0 — Galerias responsivas e estudos de caso aprimorados
+**Versão atual:** v1.6.0 — Lightbox acessível e interatividade das galerias
 
-Esta versão amplia a apresentação visual dos projetos com galerias responsivas, imagens complementares, legendas, textos alternativos e conteúdos mais completos nos estudos de caso.
-
-## Ciclo em desenvolvimento
-
-**Próxima versão:** v1.6.0 — Interatividade e acessibilidade das galerias
-
-O ciclo `v1.6.0` amplia a experiência das galerias com um lightbox acessível, navegação entre imagens, controles por teclado, contador, legendas sincronizadas e gestos de deslizar em dispositivos com tela sensível ao toque.
+Esta versão amplia a experiência das galerias com visualização ampliada das imagens, navegação por botões e teclado, contador, legendas sincronizadas, controle de foco e gestos de deslizar em dispositivos com tela sensível ao toque.
 
 ## Visualizar o projeto
 
@@ -280,7 +274,7 @@ A página principal e os estudos de caso possuem:
 
 ## Auditoria Lighthouse
 
-A versão `v1.5.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
+A versão `v1.6.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
 
 ### Página principal
 
@@ -302,7 +296,7 @@ SEO: 100
 
 ```text
 Mobile
-Performance: 96
+Performance: 94
 Acessibilidade: 100
 Boas práticas: 100
 SEO: 100
@@ -314,23 +308,27 @@ Boas práticas: 100
 SEO: 100
 ```
 
-A auditoria mobile da Loja Universo 4V foi repetida para confirmar o resultado, mantendo as mesmas pontuações.
-
 Também foram realizados testes de:
 
 * responsividade;
-* navegação por teclado;
 * funcionamento do menu mobile;
+* abertura do lightbox por clique e teclado;
+* fechamento pelo botão, pela tecla `Escape` e pelo fundo escuro;
+* navegação pelos botões Anterior e Próxima;
+* navegação pelas teclas de seta;
+* navegação circular entre as imagens;
+* sincronização do contador e das legendas;
+* manutenção do foco dentro do diálogo;
+* retorno do foco ao elemento que abriu o lightbox;
+* gestos de deslizar em dispositivos móveis;
+* preservação dos movimentos verticais;
 * carregamento das imagens;
 * galerias em desktop, tablet e celular;
 * links internos;
-* Console do navegador;
-* arquivos não encontrados na aba Network;
-* adaptação de imagens horizontais e verticais;
-* carregamento das imagens complementares;
-* exibição de legendas e textos alternativos.
+* Console do navegador sem erros;
+* ausência de arquivos não encontrados na aba Network.
 
-Os resultados confirmam a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.5.0`.
+Os resultados confirmam a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.6.0`.
 
 ## Aprendizados
 
@@ -372,6 +370,24 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis.
 
 ## Histórico recente
+
+### v1.6.0 — Lightbox acessível e interatividade das galerias
+
+* Inclusão de lightbox para ampliação das imagens.
+* Abertura das imagens por clique e teclado.
+* Fechamento pelo botão, tecla `Escape` e fundo escuro.
+* Navegação pelos botões Anterior e Próxima.
+* Navegação pelas teclas de seta.
+* Navegação circular entre a primeira e a última imagem.
+* Inclusão de contador com posição atual e total de imagens.
+* Atualização sincronizada da imagem, legenda e texto alternativo.
+* Manutenção do foco dentro do diálogo.
+* Retorno do foco ao elemento que abriu o lightbox.
+* Bloqueio da rolagem enquanto o lightbox está aberto.
+* Inclusão de gestos de deslizar em dispositivos móveis.
+* Preservação dos movimentos verticais naturais.
+* Implementação sem bibliotecas externas.
+* Nova auditoria Lighthouse em ambientes mobile e desktop.
 
 ### v1.5.0 — Galerias e estudos de caso aprimorados
 
@@ -415,7 +431,7 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
-* Realizar uma nova auditoria Lighthouse após a conclusão da versão `v1.6.0`.
+* Investigar oportunidades de otimização de desempenho no estudo da Loja Universo 4V em dispositivos móveis.
 * Revisar o peso e a otimização das novas imagens.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
