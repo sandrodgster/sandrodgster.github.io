@@ -58,8 +58,8 @@ if (menuToggle && mainNav) {
 
 }
 
-    /* =====================================================
-   LIGHTBOX DAS GALERIAS
+/* =====================================================
+LIGHTBOX DAS GALERIAS
 ===================================================== */
 
 const galleryImages = Array.from(
@@ -71,6 +71,10 @@ if (galleryImages.length > 0) {
     let currentImageIndex = 0;
     let lastFocusedElement = null;
 
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const minimumSwipeDistance = 50;
     const lightbox = document.createElement("div");
 
     lightbox.id = "gallery-lightbox";
@@ -150,6 +154,9 @@ if (galleryImages.length > 0) {
 
     const nextButton =
         lightbox.querySelector(".lightbox-next");
+
+    const lightboxImageWrapper =
+        lightbox.querySelector(".lightbox-image-wrapper");
 
     function getImageCaption(image) {
 
@@ -237,6 +244,63 @@ if (galleryImages.length > 0) {
         updateLightbox(currentImageIndex + 1);
     }
 
+    function handleTouchStart(event) {
+
+        if (
+            galleryImages.length <= 1 ||
+            event.touches.length !== 1
+        ) {
+            return;
+        }
+
+        const touch = event.touches[0];
+
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+    }
+
+    function handleTouchEnd(event) {
+
+        if (
+            galleryImages.length <= 1 ||
+            event.changedTouches.length !== 1
+        ) {
+            return;
+        }
+
+        const touch = event.changedTouches[0];
+
+        const horizontalDistance =
+            touch.clientX - touchStartX;
+
+        const verticalDistance =
+            touch.clientY - touchStartY;
+
+        const isHorizontalGesture =
+            Math.abs(horizontalDistance) >
+            Math.abs(verticalDistance);
+
+        const reachedMinimumDistance =
+            Math.abs(horizontalDistance) >=
+            minimumSwipeDistance;
+
+        if (
+            !isHorizontalGesture ||
+            !reachedMinimumDistance
+        ) {
+            return;
+        }
+
+        if (horizontalDistance > 0) {
+            showPreviousImage();
+        } else {
+            showNextImage();
+        }
+
+        touchStartX = 0;
+        touchStartY = 0;
+    }
+
     galleryImages.forEach(function (image, index) {
 
         const trigger = document.createElement("button");
@@ -282,6 +346,18 @@ if (galleryImages.length > 0) {
     nextButton.addEventListener(
         "click",
         showNextImage
+    );
+
+    lightboxImageWrapper.addEventListener(
+        "touchstart",
+        handleTouchStart,
+        { passive: true }
+    );
+
+    lightboxImageWrapper.addEventListener(
+        "touchend",
+        handleTouchEnd,
+        { passive: true }
     );
 
     lightbox.addEventListener("click", function (event) {
@@ -334,7 +410,7 @@ if (galleryImages.length > 0) {
 
             const lastControl =
                 focusableControls[
-                    focusableControls.length - 1
+                focusableControls.length - 1
                 ];
 
             if (
