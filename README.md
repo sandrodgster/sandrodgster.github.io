@@ -14,7 +14,7 @@ Esta versão amplia a apresentação visual dos projetos com galerias responsiva
 
 **Próxima versão:** v1.6.0 — Interatividade e acessibilidade das galerias
 
-O novo ciclo começou com a implementação de um lightbox acessível para ampliar as imagens dos estudos de caso, mantendo navegação por teclado, controle de foco e adaptação para diferentes tamanhos de tela.
+O ciclo `v1.6.0` amplia a experiência das galerias com um lightbox acessível, navegação entre imagens, controles por teclado, contador, legendas sincronizadas e adaptação para diferentes tamanhos de tela.
 
 ## Visualizar o projeto
 
@@ -49,6 +49,12 @@ https://sandrodgster.github.io
 - Retorno do foco para a imagem que iniciou a visualização
 - Bloqueio da rolagem da página durante a ampliação
 - Implementação sem bibliotecas externas
+- Navegação entre imagens pelos botões Anterior e Próxima
+- Navegação pelas teclas de seta `←` e `→`
+- Contador com a posição atual da imagem
+- Atualização automática da legenda durante a navegação
+- Navegação circular entre a primeira e a última imagem
+- Foco mantido dentro dos controles do diálogo
 * Imagens organizadas em pastas específicas para cada projeto
 * Suporte a imagens horizontais e verticais
 * Exibição de artes completas sem cortes
@@ -120,19 +126,23 @@ As imagens das galerias podem ser abertas em uma visualização ampliada por mei
 
 O recurso inclui:
 
-* abertura por clique;
-* abertura pelas teclas `Tab` e `Enter`;
-* fechamento pelo botão de fechar;
-* fechamento pela tecla `Escape`;
-* fechamento ao selecionar o fundo escuro;
-* bloqueio da rolagem da página enquanto o lightbox está aberto;
-* retorno do foco ao elemento que iniciou a visualização;
-* uso de `role="dialog"` e `aria-modal="true"`;
-* legenda correspondente à imagem ampliada;
-* preservação do texto alternativo da imagem;
-* adaptação para desktop, tablet e celular.
+- abertura por clique;
+- abertura pelas teclas `Tab` e `Enter`;
+- fechamento pelo botão de fechar;
+- fechamento pela tecla `Escape`;
+- fechamento ao selecionar o fundo escuro;
+- navegação pelos botões Anterior e Próxima;
+- navegação pelas teclas de seta `←` e `→`;
+- navegação circular entre a primeira e a última imagem;
+- contador com a posição atual e o total de imagens;
+- atualização sincronizada da imagem, legenda e texto alternativo;
+- bloqueio da rolagem enquanto o diálogo está aberto;
+- manutenção do foco nos controles do lightbox;
+- retorno do foco ao elemento que iniciou a visualização;
+- uso de `role="dialog"` e `aria-modal="true"`;
+- adaptação para desktop, tablet e celular.
 
-O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-gallery`, cria os controles necessários e adiciona o lightbox ao documento.
+O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-gallery`, cria os botões de abertura e adiciona ao documento o diálogo com seus controles de navegação.
 
 ## Estrutura de pastas
 
@@ -341,6 +351,12 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 - tratamento de eventos de clique e teclado;
 - desenvolvimento de componentes sem bibliotecas externas;
 - uso de branches para implementar e testar novos recursos.
+- navegação circular em coleções de imagens;
+- controle de índices em JavaScript;
+- atualização dinâmica de imagens, legendas e contadores;
+- criação de armadilha de foco para diálogos;
+- navegação por teclas direcionais;
+- diagnóstico de cache e publicação no GitHub Pages;
 
 ## Histórico recente
 
@@ -391,11 +407,10 @@ Versão anterior mantida como registro histórico no repositório remoto.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
 * Explorar animações leves sem comprometer a acessibilidade.
-- Realizar uma auditoria Lighthouse após a conclusão da versão `v1.6.0`.
-- Avaliar navegação entre imagens pelo lightbox.
-- Avaliar indicadores de imagem atual e total.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
+- Avaliar gestos de deslizar nas galerias em dispositivos móveis.
+- Realizar uma nova auditoria Lighthouse após a conclusão da versão `v1.6.0`.
 
 ## Autor
 
