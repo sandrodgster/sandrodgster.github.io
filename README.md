@@ -14,7 +14,7 @@ Esta versão amplia a apresentação visual dos projetos com galerias responsiva
 
 **Próxima versão:** v1.6.0 — Interatividade e acessibilidade das galerias
 
-O ciclo `v1.6.0` amplia a experiência das galerias com um lightbox acessível, navegação entre imagens, controles por teclado, contador, legendas sincronizadas e adaptação para diferentes tamanhos de tela.
+O ciclo `v1.6.0` amplia a experiência das galerias com um lightbox acessível, navegação entre imagens, controles por teclado, contador, legendas sincronizadas e gestos de deslizar em dispositivos com tela sensível ao toque.
 
 ## Visualizar o projeto
 
@@ -141,6 +141,10 @@ O recurso inclui:
 - retorno do foco ao elemento que iniciou a visualização;
 - uso de `role="dialog"` e `aria-modal="true"`;
 - adaptação para desktop, tablet e celular.
+- navegação por gestos de deslizar em dispositivos com tela sensível ao toque;
+- avanço para a próxima imagem ao deslizar para a esquerda;
+- retorno à imagem anterior ao deslizar para a direita;
+- preservação dos movimentos verticais naturais da página;
 
 O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-gallery`, cria os botões de abertura e adiciona ao documento o diálogo com seus controles de navegação.
 
@@ -357,6 +361,10 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 - criação de armadilha de foco para diálogos;
 - navegação por teclas direcionais;
 - diagnóstico de cache e publicação no GitHub Pages;
+- tratamento dos eventos `touchstart` e `touchend`;
+- identificação da direção e da distância dos gestos;
+- diferenciação entre movimentos horizontais e verticais;
+- uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis;
 
 ## Histórico recente
 
@@ -409,7 +417,6 @@ Versão anterior mantida como registro histórico no repositório remoto.
 * Explorar animações leves sem comprometer a acessibilidade.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
-- Avaliar gestos de deslizar nas galerias em dispositivos móveis.
 - Realizar uma nova auditoria Lighthouse após a conclusão da versão `v1.6.0`.
 
 ## Autor
