@@ -67,6 +67,7 @@ https://sandrodgster.github.io
 * Imagens responsivas com dimensões declaradas
 * Carregamento preguiçoso nas imagens complementares
 * Decodificação assíncrona de imagens
+* Otimização responsiva da imagem LCP da Loja Universo 4V com WebP, `<picture>`, `srcset` e `sizes`
 * Ano automático no rodapé
 * Metadados para mecanismos de busca
 * Open Graph e Twitter Card
@@ -198,6 +199,9 @@ sandrodgster.github.io/
 │       ├── agencia-4v-site.jpg
 │       ├── identidade-4v.png
 │       ├── loja-universo-4v.jpg
+│       ├── loja-universo-4v-480.webp
+│       ├── loja-universo-4v-768.webp
+│       ├── loja-universo-4v.webp
 │       ├── projeto-orion.jpg
 │       ├── revista-namidia.jpg
 │       └── social-media.jpg
@@ -284,32 +288,6 @@ A página principal e os estudos de caso possuem:
 
 A versão `v1.6.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
 
-### Otimização de desempenho — ciclo v1.7.0
-
-Durante o início do ciclo `v1.7.0`, foi identificado que a imagem principal do estudo de caso da Loja Universo 4V era o elemento responsável pelo Largest Contentful Paint (LCP).
-
-Antes da otimização:
-
-```text
-Performance: 96
-First Contentful Paint: 0,9 s
-Largest Contentful Paint: 2,7 s
-Total Blocking Time: 40–50 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,9 s
-
-Após a otimização:
-Performance: 100
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-
-First Contentful Paint: 0,8 s
-Largest Contentful Paint: 1,2 s
-Total Blocking Time: 60 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,8 s
-
 ### Página principal
 
 ```text
@@ -363,6 +341,47 @@ Também foram realizados testes de:
 * ausência de arquivos não encontrados na aba Network.
 
 Os resultados confirmam a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.6.0`.
+
+### Otimização de desempenho — ciclo v1.7.0
+
+Durante o início do ciclo `v1.7.0`, foi identificado que a imagem principal do estudo de caso da Loja Universo 4V era o elemento responsável pelo Largest Contentful Paint (LCP).
+
+Em um teste de referência realizado antes da otimização:
+
+```text
+Performance: 96
+First Contentful Paint: 0,9 s
+Largest Contentful Paint: 2,7 s
+Total Blocking Time: 40–50 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,9 s
+```
+
+Após a otimização, o teste final apresentou:
+
+```text
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
+
+First Contentful Paint: 0,8 s
+Largest Contentful Paint: 1,2 s
+Total Blocking Time: 60 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,8 s
+```
+
+As melhorias implementadas incluíram:
+
+* prioridade elevada para a imagem LCP com `fetchpriority="high"`;
+* conversão da imagem principal para WebP;
+* criação de versões responsivas da imagem;
+* utilização de `<picture>`, `srcset` e `sizes`;
+* manutenção do arquivo JPEG como fallback;
+* preservação das dimensões declaradas para evitar mudanças de layout.
+
+O LCP foi reduzido de `2,7 s` para `1,2 s`, e a pontuação de Performance mobile atingiu 100 no teste final.
 
 ## Aprendizados
 
@@ -472,6 +491,7 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
+* Avaliar oportunidades de otimização responsiva nas imagens de destaque dos demais estudos de caso.
 * Revisar o peso e a otimização das novas imagens.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
