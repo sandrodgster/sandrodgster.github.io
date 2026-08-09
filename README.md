@@ -10,6 +10,14 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 Esta versão amplia a experiência das galerias com visualização ampliada das imagens, navegação por botões e teclado, contador, legendas sincronizadas, controle de foco e gestos de deslizar em dispositivos com tela sensível ao toque.
 
+## Ciclo em desenvolvimento
+
+**Próxima versão:** v1.7.0 — Performance e refinamento da experiência
+
+O ciclo `v1.7.0` concentra-se em otimizações de desempenho e refinamentos técnicos da experiência do portfólio, preservando acessibilidade, estabilidade e qualidade visual.
+
+A primeira melhoria do ciclo foi direcionada ao Largest Contentful Paint (LCP) do estudo de caso da Loja Universo 4V.
+
 ## Visualizar o projeto
 
 Acesse o portfólio publicado:
@@ -276,6 +284,32 @@ A página principal e os estudos de caso possuem:
 
 A versão `v1.6.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
 
+### Otimização de desempenho — ciclo v1.7.0
+
+Durante o início do ciclo `v1.7.0`, foi identificado que a imagem principal do estudo de caso da Loja Universo 4V era o elemento responsável pelo Largest Contentful Paint (LCP).
+
+Antes da otimização:
+
+```text
+Performance: 96
+First Contentful Paint: 0,9 s
+Largest Contentful Paint: 2,7 s
+Total Blocking Time: 40–50 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,9 s
+
+Após a otimização:
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
+
+First Contentful Paint: 0,8 s
+Largest Contentful Paint: 1,2 s
+Total Blocking Time: 60 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,8 s
+
 ### Página principal
 
 ```text
@@ -368,6 +402,13 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * identificação da direção e da distância dos gestos;
 * diferenciação entre movimentos horizontais e verticais;
 * uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis.
+* diagnóstico de Largest Contentful Paint com Lighthouse;
+* identificação do elemento responsável pelo LCP;
+* uso de `fetchpriority` para recursos críticos;
+* otimização de imagens com WebP;
+* implementação de imagens responsivas com `<picture>`, `srcset` e `sizes`;
+* análise dos recursos efetivamente carregados pela aba Network;
+* comparação de métricas antes e depois de uma otimização.
 
 ## Histórico recente
 
@@ -431,7 +472,6 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
-* Investigar oportunidades de otimização de desempenho no estudo da Loja Universo 4V em dispositivos móveis.
 * Revisar o peso e a otimização das novas imagens.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
