@@ -74,14 +74,26 @@
 
             <div class="case-cover">
 
-                <img
-                    src="../images/projetos/loja-universo-4v.jpg"
-                    alt="Materiais visuais desenvolvidos para a Loja Universo 4V"
-                    width="1319"
-                    height="717"
-                    decoding="async"
-                    fetchpriority="high"
-                >
+<picture>
+    <source
+        type="image/webp"
+        srcset="
+            ../images/projetos/loja-universo-4v-480.webp 480w,
+            ../images/projetos/loja-universo-4v-768.webp 768w,
+            ../images/projetos/loja-universo-4v.webp 1319w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 90vw, 1319px"
+    >
+
+    <img
+        src="../images/projetos/loja-universo-4v.jpg"
+        alt="Materiais visuais desenvolvidos para a Loja Universo 4V"
+        width="1319"
+        height="717"
+        decoding="async"
+        fetchpriority="high"
+    >
+</picture>
 
             </div>
 
