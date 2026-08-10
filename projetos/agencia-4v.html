@@ -74,19 +74,32 @@
 
             <div class="case-cover">
 
-                <img src="../images/projetos/agencia-4v-site.jpg"
-                    alt="Página inicial do site institucional da Agência 4V Comunicação" width="1920" height="1040"
-                    decoding="async">
+                <picture>
+                    <source
+                    type="image/webp"
+                    srcset="
+                        ../images/projetos/agencia-4v-site-480.webp 480w,
+                        ../images/projetos/agencia-4v-site-768.webp 768w,
+                        ../images/projetos/agencia-4v-site.webp 1920w
+                    "
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 90vw, 1920px">
 
-            </div>
+                    <img src="../images/projetos/agencia-4v-site.jpg"
+                        alt="Página inicial do site institucional da Agência 4V Comunicação" 
+                        width="1920" 
+                        height="1040"
+                        decoding="async" 
+                        fetchpriority="high"
+                    >
+                </picture>
 
-            <div class="case-actions">
+                <div class="case-actions">
 
-                <a href="../index.html#projetos" class="btn">
-                    Ver outros projetos
-                </a>
+                    <a href="../index.html#projetos" class="btn">
+                        Ver outros projetos
+                    </a>
 
-            </div>
+                </div>
 
         </section>
 
@@ -155,78 +168,63 @@
 
         <section class="case-gallery section">
 
-    <div class="case-gallery-header">
+            <div class="case-gallery-header">
 
-        <span class="tag">
-            Interface institucional
-        </span>
+                <span class="tag">
+                    Interface institucional
+                </span>
 
-        <h2>Apresentação do projeto</h2>
+                <h2>Apresentação do projeto</h2>
 
-        <p>
-            O site foi organizado para apresentar os serviços,
-            o posicionamento e a identidade da Agência 4V Comunicação
-            de forma clara em diferentes tamanhos de tela.
-        </p>
+                <p>
+                    O site foi organizado para apresentar os serviços,
+                    o posicionamento e a identidade da Agência 4V Comunicação
+                    de forma clara em diferentes tamanhos de tela.
+                </p>
 
-    </div>
+            </div>
 
-    <figure class="case-gallery-featured">
+            <figure class="case-gallery-featured">
 
-        <img
-            src="../images/projetos/agencia-4v/agencia-4v-desktop.jpg"
-            alt="Página inicial do site da Agência 4V Comunicação em uma tela desktop"
-            width="1920"
-            height="1040"
-            loading="lazy"
-            decoding="async"
-        >
+                <img src="../images/projetos/agencia-4v/agencia-4v-desktop.jpg"
+                    alt="Página inicial do site da Agência 4V Comunicação em uma tela desktop" width="1920"
+                    height="1040" loading="lazy" decoding="async">
 
-        <figcaption>
-            Página inicial do site institucional em sua versão desktop.
-        </figcaption>
+                <figcaption>
+                    Página inicial do site institucional em sua versão desktop.
+                </figcaption>
 
-    </figure>
+            </figure>
 
-    <div class="case-gallery-grid">
+            <div class="case-gallery-grid">
 
-        <figure class="case-gallery-item case-gallery-item-mobile">
+                <figure class="case-gallery-item case-gallery-item-mobile">
 
-            <img
-                src="../images/projetos/agencia-4v/agencia-4v-mobile.jpg"
-                alt="Versão mobile do site institucional da Agência 4V Comunicação"
-                width="387"
-                height="826"
-                loading="lazy"
-                decoding="async"
-            >
+                    <img src="../images/projetos/agencia-4v/agencia-4v-mobile.jpg"
+                        alt="Versão mobile do site institucional da Agência 4V Comunicação" width="387" height="826"
+                        loading="lazy" decoding="async">
 
-            <figcaption>
-                Interface adaptada para navegação em dispositivos móveis.
-            </figcaption>
+                    <figcaption>
+                        Interface adaptada para navegação em dispositivos móveis.
+                    </figcaption>
 
-        </figure>
+                </figure>
 
-        <figure class="case-gallery-item">
+                <figure class="case-gallery-item">
 
-            <img
-                src="../images/projetos/agencia-4v/agencia-4v-secoes.jpg"
-                alt="Seções institucionais e apresentação dos serviços da Agência 4V Comunicação"
-                width="1920"
-                height="1040"
-                loading="lazy"
-                decoding="async"
-            >
+                    <img src="../images/projetos/agencia-4v/agencia-4v-secoes.jpg"
+                        alt="Seções institucionais e apresentação dos serviços da Agência 4V Comunicação" width="1920"
+                        height="1040" loading="lazy" decoding="async">
 
-            <figcaption>
-                Organização dos serviços e das informações institucionais.
-            </figcaption>
+                    <figcaption>
+                        Organização dos serviços e das informações institucionais.
+                    </figcaption>
 
-        </figure>
+                </figure>
 
-    </div>
+            </div>
 
-</section>
+        </section>
 
         <section class="case-section section">
 
