@@ -75,8 +75,16 @@
 
             <div class="case-cover">
 
-                <img src="../images/projetos/revista-namidia.jpg" alt="Projeto editorial da Revista NaMídia"
-                    width="1200" height="1610" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../images/projetos/revista-namidia-480.webp 480w,
+            ../images/projetos/revista-namidia-768.webp 768w,
+            ../images/projetos/revista-namidia.webp 1200w
+        " sizes="(max-width: 600px) 100vw, (max-width: 900px) 90vw, 1200px">
+
+                    <img src="../images/projetos/revista-namidia.jpg" alt="Projeto editorial da Revista NaMídia"
+                        width="1200" height="1610" decoding="async" fetchpriority="high">
+                </picture>
 
             </div>
 
