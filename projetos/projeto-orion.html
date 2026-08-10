@@ -74,23 +74,29 @@
 
             <div class="case-cover">
 
-                <img src="../images/projetos/projeto-orion.jpg" alt="Página inicial do portfólio Projeto Orion"
-                    width="1200" height="600" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../images/projetos/projeto-orion-480.webp 480w,
+            ../images/projetos/projeto-orion-768.webp 768w,
+            ../images/projetos/projeto-orion.webp 1200w
+        " sizes="(max-width: 600px) 100vw, (max-width: 900px) 90vw, 1200px">
 
-            </div>
+                    <img src="../images/projetos/projeto-orion.jpg" alt="Página inicial do portfólio Projeto Orion"
+                        width="1200" height="600" decoding="async" fetchpriority="high">
+                </picture>
 
-            <div class="case-actions">
+                <div class="case-actions">
 
-                <a href="https://sandrodgster.github.io" class="btn" target="_blank" rel="noopener noreferrer">
-                    Ver projeto publicado
-                </a>
+                    <a href="https://sandrodgster.github.io" class="btn" target="_blank" rel="noopener noreferrer">
+                        Ver projeto publicado
+                    </a>
 
-                <a href="https://github.com/sandrodgster/sandrodgster.github.io" class="btn-outline" target="_blank"
-                    rel="noopener noreferrer">
-                    Ver código no GitHub
-                </a>
+                    <a href="https://github.com/sandrodgster/sandrodgster.github.io" class="btn-outline" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver código no GitHub
+                    </a>
 
-            </div>
+                </div>
 
         </section>
 
@@ -182,77 +188,62 @@
 
         <section class="case-gallery section">
 
-    <div class="case-gallery-header">
+            <div class="case-gallery-header">
 
-        <span class="tag">
-            Interface e responsividade
-        </span>
+                <span class="tag">
+                    Interface e responsividade
+                </span>
 
-        <h2>Projeto em diferentes telas</h2>
+                <h2>Projeto em diferentes telas</h2>
 
-        <p>
-            A interface foi desenvolvida para manter clareza, organização
-            e consistência visual em computadores, tablets e celulares.
-        </p>
+                <p>
+                    A interface foi desenvolvida para manter clareza, organização
+                    e consistência visual em computadores, tablets e celulares.
+                </p>
 
-    </div>
+            </div>
 
-    <figure class="case-gallery-featured">
+            <figure class="case-gallery-featured">
 
-        <img
-            src="../images/projetos/orion/orion-desktop.jpg"
-            alt="Página principal do Projeto Orion exibida em uma tela desktop"
-            width="1360"
-            height="723"
-            loading="lazy"
-            decoding="async"
-        >
+                <img src="../images/projetos/orion/orion-desktop.jpg"
+                    alt="Página principal do Projeto Orion exibida em uma tela desktop" width="1360" height="723"
+                    loading="lazy" decoding="async">
 
-        <figcaption>
-            Página principal do portfólio em sua versão desktop.
-        </figcaption>
+                <figcaption>
+                    Página principal do portfólio em sua versão desktop.
+                </figcaption>
 
-    </figure>
+            </figure>
 
-    <div class="case-gallery-grid">
+            <div class="case-gallery-grid">
 
-        <figure class="case-gallery-item case-gallery-item-mobile">
+                <figure class="case-gallery-item case-gallery-item-mobile">
 
-            <img
-                src="../images/projetos/orion/orion-mobile.jpg"
-                alt="Versão mobile da página principal do Projeto Orion"
-                width="625"
-                height="1360"
-                loading="lazy"
-                decoding="async"
-            >
+                    <img src="../images/projetos/orion/orion-mobile.jpg"
+                        alt="Versão mobile da página principal do Projeto Orion" width="625" height="1360"
+                        loading="lazy" decoding="async">
 
-            <figcaption>
-                Adaptação da interface para dispositivos móveis.
-            </figcaption>
+                    <figcaption>
+                        Adaptação da interface para dispositivos móveis.
+                    </figcaption>
 
-        </figure>
+                </figure>
 
-        <figure class="case-gallery-item">
+                <figure class="case-gallery-item">
 
-            <img
-                src="../images/projetos/orion/orion-projetos.jpg"
-                alt="Seção de projetos e estudos de case do Projeto Orion"
-                width="1363"
-                height="778"
-                loading="lazy"
-                decoding="async"
-            >
+                    <img src="../images/projetos/orion/orion-projetos.jpg"
+                        alt="Seção de projetos e estudos de case do Projeto Orion" width="1363" height="778"
+                        loading="lazy" decoding="async">
 
-            <figcaption>
-                Organização dos projetos em cards e estudos de caso individuais.
-            </figcaption>
+                    <figcaption>
+                        Organização dos projetos em cards e estudos de caso individuais.
+                    </figcaption>
 
-        </figure>
+                </figure>
 
-    </div>
+            </div>
 
-</section>
+        </section>
 
         <section class="case-section section">
 
