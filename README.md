@@ -6,17 +6,13 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.6.0 — Lightbox acessível e interatividade das galerias
+**Versão atual:** v1.7.0 — Performance e refinamento da experiência
 
-Esta versão amplia a experiência das galerias com visualização ampliada das imagens, navegação por botões e teclado, contador, legendas sincronizadas, controle de foco e gestos de deslizar em dispositivos com tela sensível ao toque.
+A versão `v1.7.0` consolida uma rodada de otimizações orientadas por métricas, com foco no Largest Contentful Paint (LCP), na entrega responsiva das imagens principais e na priorização dos recursos críticos da página inicial e dos seis estudos de caso.
 
-## Ciclo em desenvolvimento
+As páginas foram analisadas individualmente com Lighthouse e Chrome DevTools. As capas mais pesadas receberam versões WebP responsivas com `<picture>`, `srcset` e `sizes`, enquanto imagens já leves receberam apenas `fetchpriority="high"` quando isso foi tecnicamente suficiente.
 
-**Próxima versão:** v1.7.0 — Performance e refinamento da experiência
-
-O ciclo `v1.7.0` concentra-se em otimizações de desempenho e refinamentos técnicos da experiência do portfólio, preservando acessibilidade, estabilidade e qualidade visual.
-
-A primeira grande etapa do ciclo foi dedicada à otimização das imagens responsáveis pelo Largest Contentful Paint (LCP) nos estudos de caso. As páginas foram analisadas individualmente com Lighthouse e DevTools, permitindo aplicar otimizações proporcionais às necessidades de cada projeto.
+A versão também passou por uma auditoria final de funcionamento, incluindo Network, Console, navegação por teclado, menu mobile, lightbox, controle de foco, gestos de deslizar e rolagem vertical.
 
 ## Visualizar o projeto
 
@@ -67,7 +63,7 @@ https://sandrodgster.github.io
 * Imagens responsivas com dimensões declaradas
 * Carregamento preguiçoso nas imagens complementares
 * Decodificação assíncrona de imagens
-* Otimização das imagens LCP dos estudos de caso com `fetchpriority="high"` e, quando necessário, WebP responsivo, `<picture>`, `srcset` e `sizes`
+* Otimização das imagens LCP da página principal e dos estudos de caso com `fetchpriority="high"` e, quando necessário, WebP responsivo, `<picture>`, `srcset` e `sizes`
 * Ano automático no rodapé
 * Metadados para mecanismos de busca
 * Open Graph e Twitter Card
@@ -158,74 +154,74 @@ O JavaScript identifica automaticamente as imagens localizadas dentro de `.case-
 ```text
 sandrodgster.github.io/
 ├── css/
-│   └── style.css
+│   └── style.css
 ├── images/
-│   ├── favicon/
-│   │   ├── apple-touch-icon.png
-│   │   ├── avatar-SA-512.png
-│   │   ├── favicon.ico
-│   │   ├── favicon-16x16.png
-│   │   ├── favicon-32x32.png
-│   │   └── favicon.svg
-│   ├── marca/
-│   │   └── monograma-sa.svg
-│   ├── perfil/
-│   │   └── sandro-alves.jpg
-│   └── projetos/
-│       ├── agencia-4v/
-│       │   ├── agencia-4v-desktop.jpg
-│       │   ├── agencia-4v-mobile.jpg
-│       │   └── agencia-4v-secoes.jpg
-│       ├── identidade-4v/
-│       │   ├── identidade-4v-aplicacoes.jpg
-│       │   ├── identidade-4v-elementos.jpg
-│       │   └── identidade-4v-marca.jpg
-│       ├── loja-universo-4v/
-│       │   ├── loja-universo-home.jpg
-│       │   ├── loja-universo-mobile.jpg
-│       │   └── loja-universo-produtos.jpg
-│       ├── orion/
-│       │   ├── orion-desktop.jpg
-│       │   ├── orion-mobile.jpg
-│       │   └── orion-projetos.jpg
-│       ├── revista-namidia/
-│       │   ├── revista-namidia-capa.jpg
-│       │   ├── revista-namidia-diagramacao.jpg
-│       │   └── revista-namidia-paginas.jpg
-│       ├── social-media/
-│       │   ├── social-media-campanha.jpg
-│       │   ├── social-media-feed.jpg
-│       │   └── social-media-stories.jpg
-│       ├── agencia-4v-site.jpg
-│       ├── agencia-4v-site-480.webp
-│       ├── agencia-4v-site-768.webp
-│       ├── agencia-4v-site.webp
-│       ├── identidade-4v.png
-│       ├── loja-universo-4v.jpg
-│       ├── loja-universo-4v-480.webp
-│       ├── loja-universo-4v-768.webp
-│       ├── loja-universo-4v.webp
-│       ├── projeto-orion.jpg
-│       ├── projeto-orion-480.webp
-│       ├── projeto-orion-768.webp
-│       ├── projeto-orion.webp
-│       ├── revista-namidia.jpg
-│       ├── revista-namidia-480.webp
-│       ├── revista-namidia-768.webp
-│       ├── revista-namidia.webp
-│       ├── social-media.jpg
-│       ├── social-media-480.webp
-│       ├── social-media-768.webp
-│       └── social-media.webp
+│   ├── favicon/
+│   │   ├── apple-touch-icon.png
+│   │   ├── avatar-SA-512.png
+│   │   ├── favicon.ico
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   └── favicon.svg
+│   ├── marca/
+│   │   └── monograma-sa.svg
+│   ├── perfil/
+│   │   └── sandro-alves.jpg
+│   └── projetos/
+│       ├── agencia-4v/
+│       │   ├── agencia-4v-desktop.jpg
+│       │   ├── agencia-4v-mobile.jpg
+│       │   └── agencia-4v-secoes.jpg
+│       ├── identidade-4v/
+│       │   ├── identidade-4v-aplicacoes.jpg
+│       │   ├── identidade-4v-elementos.jpg
+│       │   └── identidade-4v-marca.jpg
+│       ├── loja-universo-4v/
+│       │   ├── loja-universo-home.jpg
+│       │   ├── loja-universo-mobile.jpg
+│       │   └── loja-universo-produtos.jpg
+│       ├── orion/
+│       │   ├── orion-desktop.jpg
+│       │   ├── orion-mobile.jpg
+│       │   └── orion-projetos.jpg
+│       ├── revista-namidia/
+│       │   ├── revista-namidia-capa.jpg
+│       │   ├── revista-namidia-diagramacao.jpg
+│       │   └── revista-namidia-paginas.jpg
+│       ├── social-media/
+│       │   ├── social-media-campanha.jpg
+│       │   ├── social-media-feed.jpg
+│       │   └── social-media-stories.jpg
+│       ├── agencia-4v-site.jpg
+│       ├── agencia-4v-site-480.webp
+│       ├── agencia-4v-site-768.webp
+│       ├── agencia-4v-site.webp
+│       ├── identidade-4v.png
+│       ├── loja-universo-4v.jpg
+│       ├── loja-universo-4v-480.webp
+│       ├── loja-universo-4v-768.webp
+│       ├── loja-universo-4v.webp
+│       ├── projeto-orion.jpg
+│       ├── projeto-orion-480.webp
+│       ├── projeto-orion-768.webp
+│       ├── projeto-orion.webp
+│       ├── revista-namidia.jpg
+│       ├── revista-namidia-480.webp
+│       ├── revista-namidia-768.webp
+│       ├── revista-namidia.webp
+│       ├── social-media.jpg
+│       ├── social-media-480.webp
+│       ├── social-media-768.webp
+│       └── social-media.webp
 ├── js/
-│   └── script.js
+│   └── script.js
 ├── projetos/
-│   ├── agencia-4v.html
-│   ├── identidade-4v.html
-│   ├── loja-universo-4v.html
-│   ├── projeto-orion.html
-│   ├── revista-namidia.html
-│   └── social-media.html
+│   ├── agencia-4v.html
+│   ├── identidade-4v.html
+│   ├── loja-universo-4v.html
+│   ├── projeto-orion.html
+│   ├── revista-namidia.html
+│   └── social-media.html
 ├── index.html
 └── README.md
 ```
@@ -298,65 +294,45 @@ A página principal e os estudos de caso possuem:
 
 ## Auditoria Lighthouse
 
-A versão `v1.6.0` foi auditada com o Lighthouse em ambientes mobile e desktop.
+A versão `v1.7.0` foi auditada com Lighthouse e Chrome DevTools, com foco em desempenho, estabilidade, acessibilidade e carregamento dos recursos críticos.
 
 ### Página principal
 
-```text
-Mobile
-Performance: 100
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-
-Desktop
-Performance: 100
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-```
-
-### Estudo de caso da Loja Universo 4V
+Na auditoria mobile final, após a priorização da foto de perfil responsável pelo LCP:
 
 ```text
-Mobile
-Performance: 94
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-
-Desktop
 Performance: 100
 Acessibilidade: 100
 Boas práticas: 100
 SEO: 100
+
+First Contentful Paint: 0,8 s
+Largest Contentful Paint: 1,0 s
+Total Blocking Time: 50 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,8 s
 ```
 
-Também foram realizados testes de:
+Em uma auditoria desktop da página principal:
 
-* responsividade;
-* funcionamento do menu mobile;
-* abertura do lightbox por clique e teclado;
-* fechamento pelo botão, pela tecla `Escape` e pelo fundo escuro;
-* navegação pelos botões Anterior e Próxima;
-* navegação pelas teclas de seta;
-* navegação circular entre as imagens;
-* sincronização do contador e das legendas;
-* manutenção do foco dentro do diálogo;
-* retorno do foco ao elemento que abriu o lightbox;
-* gestos de deslizar em dispositivos móveis;
-* preservação dos movimentos verticais;
-* carregamento das imagens;
-* galerias em desktop, tablet e celular;
-* links internos;
-* Console do navegador sem erros;
-* ausência de arquivos não encontrados na aba Network.
+```text
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
 
-Os resultados confirmaram a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.6.0`.
+First Contentful Paint: 0,4 s
+Largest Contentful Paint: 0,4 s
+Total Blocking Time: 0 ms
+Cumulative Layout Shift: 0
+Speed Index: 0,4 s
+```
 
-### Otimização sistemática das imagens LCP — ciclo v1.7.0
+A imagem `images/perfil/sandro-alves.jpg`, já leve, foi mantida em JPEG e recebeu apenas `fetchpriority="high"`. O LCP mobile passou de `1,1 s` para `1,0 s`, sem introduzir complexidade desnecessária.
 
-Durante o ciclo `v1.7.0`, os estudos de caso foram analisados individualmente com Lighthouse e Chrome DevTools para identificar oportunidades de melhoria no carregamento de suas imagens principais.
+### Otimização sistemática das imagens LCP dos estudos de caso
+
+Os seis estudos de caso foram analisados individualmente para identificar oportunidades de melhoria no carregamento das imagens principais.
 
 As otimizações aplicadas incluíram:
 
@@ -419,6 +395,33 @@ A Identidade Visual 4V já apresentava bom desempenho e recebeu apenas a prioriz
 
 Os testes confirmaram que a otimização das imagens trouxe ganhos significativos sem comprometer qualidade visual, responsividade ou acessibilidade.
 
+### Auditoria funcional final
+
+Também foram realizados testes de:
+
+* responsividade em diferentes tamanhos de tela;
+* funcionamento do menu mobile;
+* navegação por teclado;
+* abertura e fechamento do lightbox;
+* navegação pelas teclas de seta;
+* navegação circular entre as imagens;
+* sincronização do contador e das legendas;
+* manutenção do foco dentro do diálogo;
+* retorno do foco ao elemento que abriu o lightbox;
+* gestos de deslizar em dispositivos móveis;
+* preservação dos movimentos verticais;
+* carregamento das imagens WebP e dos fallbacks;
+* Console do navegador sem erros;
+* Network sem respostas `404` ou `5xx`.
+
+A auditoria final confirmou a estabilidade técnica da versão `v1.7.0`.
+
+### Decisões técnicas da auditoria
+
+O Lighthouse também sinalizou oportunidades relacionadas ao tempo de cache e ao CSS que participa do caminho crítico de renderização. Essas ocorrências não apresentaram impacto mensurável relevante nos testes finais: a página principal permaneceu com Performance 100, e o arquivo CSS é pequeno.
+
+Por isso, a versão `v1.7.0` foi encerrada sem adicionar complexidade como critical CSS inline, divisão artificial do stylesheet ou mudanças de infraestrutura apenas para remover alertas de baixo impacto.
+
 ## Aprendizados
 
 Durante o desenvolvimento do Projeto Orion, pratiquei:
@@ -470,6 +473,22 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.7.0 — Performance e refinamento da experiência
+
+* Otimização sistemática das imagens responsáveis pelo Largest Contentful Paint.
+* Criação de versões WebP responsivas para as capas mais pesadas.
+* Implementação de `<picture>`, `srcset` e `sizes` nos estudos de caso apropriados.
+* Uso de `fetchpriority="high"` nos recursos LCP da página principal e dos estudos de caso.
+* Preservação dos arquivos originais como fallback.
+* Manutenção de `width` e `height` para estabilidade de layout.
+* Priorização da foto de perfil da página principal sem conversão desnecessária de formato.
+* Validação dos recursos carregados pela aba Network.
+* Auditorias Lighthouse com Performance 100 nas execuções finais dos seis estudos de caso.
+* Página principal com Performance, Acessibilidade, Boas práticas e SEO em 100 na auditoria mobile final.
+* Auditoria funcional com Console sem erros e Network sem respostas `404` ou `5xx`.
+* Validação do menu mobile, teclado, lightbox, foco, gestos de deslizar e rolagem vertical.
+* Refinamento da documentação técnica do projeto.
 
 ### v1.6.0 — Lightbox acessível e interatividade das galerias
 
@@ -531,15 +550,13 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
-* Revisar o peso e a otimização das imagens complementares das galerias.
+* Revisar o peso das imagens complementares das galerias quando novas medições indicarem necessidade.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
-* Explorar animações leves sem comprometer a acessibilidade.
+* Explorar animações leves sem comprometer a acessibilidade e a preferência por redução de movimento.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
-* Avaliar oportunidades de redução de solicitações que bloqueiam a renderização.
-* Revisar estratégias de cache dentro das limitações do GitHub Pages.
-* Realizar uma auditoria geral antes do fechamento da versão `v1.7.0`.
+* Manter auditorias periódicas de desempenho, acessibilidade, SEO e estabilidade conforme o projeto evoluir.
 
 ## Autor
 
