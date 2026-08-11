@@ -313,6 +313,14 @@ nav a:hover {
     color: var(--background);
 }
 
+.hero .btn {
+    background-color: var(--primary);
+}
+
+.hero .btn:hover {
+    opacity: .85;
+}
+
 /* =====================================================
    7. SOBRE
 ===================================================== */
