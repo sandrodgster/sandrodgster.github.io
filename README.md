@@ -16,7 +16,7 @@ Esta versão amplia a experiência das galerias com visualização ampliada das 
 
 O ciclo `v1.7.0` concentra-se em otimizações de desempenho e refinamentos técnicos da experiência do portfólio, preservando acessibilidade, estabilidade e qualidade visual.
 
-A primeira melhoria do ciclo foi direcionada ao Largest Contentful Paint (LCP) do estudo de caso da Loja Universo 4V.
+A primeira grande etapa do ciclo foi dedicada à otimização das imagens responsáveis pelo Largest Contentful Paint (LCP) nos estudos de caso. As páginas foram analisadas individualmente com Lighthouse e DevTools, permitindo aplicar otimizações proporcionais às necessidades de cada projeto.
 
 ## Visualizar o projeto
 
@@ -46,19 +46,19 @@ https://sandrodgster.github.io
 * Seis estudos de caso individuais
 * Galerias responsivas nos estudos de caso
 * Lightbox para ampliação das imagens das galerias
-    * Abertura das imagens por clique ou teclado
-    * Fechamento pelo botão, pela tecla `Escape` ou pelo fundo escuro
-    * Retorno do foco para a imagem que iniciou a visualização
-    * Bloqueio da rolagem da página durante a ampliação
-    * Implementação sem bibliotecas externas
-    * Navegação pelos botões Anterior e Próxima
-    * Navegação pelas teclas de seta `←` e `→`
-    * Contador com a posição atual da imagem
-    * Atualização automática da legenda durante a navegação
-    * Navegação circular entre a primeira e a última imagem
-    * Foco mantido dentro dos controles do diálogo
-    * Gestos de deslizar em dispositivos com tela sensível ao toque
-    * Preservação dos movimentos verticais naturais da página
+    * Abertura das imagens por clique ou teclado
+    * Fechamento pelo botão, pela tecla `Escape` ou pelo fundo escuro
+    * Retorno do foco para a imagem que iniciou a visualização
+    * Bloqueio da rolagem da página durante a ampliação
+    * Implementação sem bibliotecas externas
+    * Navegação pelos botões Anterior e Próxima
+    * Navegação pelas teclas de seta `←` e `→`
+    * Contador com a posição atual da imagem
+    * Atualização automática da legenda durante a navegação
+    * Navegação circular entre a primeira e a última imagem
+    * Foco mantido dentro dos controles do diálogo
+    * Gestos de deslizar em dispositivos com tela sensível ao toque
+    * Preservação dos movimentos verticais naturais da página
 * Imagens organizadas em pastas específicas para cada projeto
 * Suporte a imagens horizontais e verticais
 * Exibição de artes completas sem cortes
@@ -67,7 +67,7 @@ https://sandrodgster.github.io
 * Imagens responsivas com dimensões declaradas
 * Carregamento preguiçoso nas imagens complementares
 * Decodificação assíncrona de imagens
-* Otimização responsiva da imagem LCP da Loja Universo 4V com WebP, `<picture>`, `srcset` e `sizes`
+* Otimização das imagens LCP dos estudos de caso com `fetchpriority="high"` e, quando necessário, WebP responsivo, `<picture>`, `srcset` e `sizes`
 * Ano automático no rodapé
 * Metadados para mecanismos de busca
 * Open Graph e Twitter Card
@@ -197,14 +197,26 @@ sandrodgster.github.io/
 │       │   ├── social-media-feed.jpg
 │       │   └── social-media-stories.jpg
 │       ├── agencia-4v-site.jpg
+│       ├── agencia-4v-site-480.webp
+│       ├── agencia-4v-site-768.webp
+│       ├── agencia-4v-site.webp
 │       ├── identidade-4v.png
 │       ├── loja-universo-4v.jpg
 │       ├── loja-universo-4v-480.webp
 │       ├── loja-universo-4v-768.webp
 │       ├── loja-universo-4v.webp
 │       ├── projeto-orion.jpg
+│       ├── projeto-orion-480.webp
+│       ├── projeto-orion-768.webp
+│       ├── projeto-orion.webp
 │       ├── revista-namidia.jpg
-│       └── social-media.jpg
+│       ├── revista-namidia-480.webp
+│       ├── revista-namidia-768.webp
+│       ├── revista-namidia.webp
+│       ├── social-media.jpg
+│       ├── social-media-480.webp
+│       ├── social-media-768.webp
+│       └── social-media.webp
 ├── js/
 │   └── script.js
 ├── projetos/
@@ -340,48 +352,72 @@ Também foram realizados testes de:
 * Console do navegador sem erros;
 * ausência de arquivos não encontrados na aba Network.
 
-Os resultados confirmam a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.6.0`.
+Os resultados confirmaram a estabilidade, a acessibilidade e a qualidade técnica da versão `v1.6.0`.
 
-### Otimização de desempenho — ciclo v1.7.0
+### Otimização sistemática das imagens LCP — ciclo v1.7.0
 
-Durante o início do ciclo `v1.7.0`, foi identificado que a imagem principal do estudo de caso da Loja Universo 4V era o elemento responsável pelo Largest Contentful Paint (LCP).
+Durante o ciclo `v1.7.0`, os estudos de caso foram analisados individualmente com Lighthouse e Chrome DevTools para identificar oportunidades de melhoria no carregamento de suas imagens principais.
 
-Em um teste de referência realizado antes da otimização:
+As otimizações aplicadas incluíram:
 
-```text
-Performance: 96
-First Contentful Paint: 0,9 s
-Largest Contentful Paint: 2,7 s
-Total Blocking Time: 40–50 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,9 s
-```
-
-Após a otimização, o teste final apresentou:
-
-```text
-Performance: 100
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-
-First Contentful Paint: 0,8 s
-Largest Contentful Paint: 1,2 s
-Total Blocking Time: 60 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,8 s
-```
-
-As melhorias implementadas incluíram:
-
-* prioridade elevada para a imagem LCP com `fetchpriority="high"`;
-* conversão da imagem principal para WebP;
-* criação de versões responsivas da imagem;
+* uso de `fetchpriority="high"` nas imagens responsáveis pelo LCP;
+* conversão das capas mais pesadas para WebP;
+* criação de versões responsivas em diferentes larguras;
 * utilização de `<picture>`, `srcset` e `sizes`;
-* manutenção do arquivo JPEG como fallback;
-* preservação das dimensões declaradas para evitar mudanças de layout.
+* manutenção dos arquivos originais como fallback;
+* preservação das dimensões `width` e `height`;
+* verificação dos recursos efetivamente carregados pela aba Network;
+* comparação das métricas antes e depois das alterações.
 
-O LCP foi reduzido de `2,7 s` para `1,2 s`, e a pontuação de Performance mobile atingiu 100 no teste final.
+Os resultados finais das auditorias mobile foram:
+
+```text
+Loja Universo 4V
+Performance: 100
+LCP: 1,2 s
+
+Agência 4V Comunicação
+Performance: 100
+LCP: 1,2 s
+
+Projeto Orion
+Performance: 100
+LCP: 1,1 s
+
+Identidade Visual 4V
+Performance: 100
+LCP: 1,1 s
+
+Revista NaMídia
+Performance: 100
+LCP: 1,4 s
+
+Campanha para Redes Sociais
+Performance: 100
+LCP: 1,4 s
+```
+
+Em todas essas auditorias finais, Acessibilidade, Boas práticas e SEO também atingiram 100 pontos.
+
+Entre os ganhos mais expressivos estiveram:
+
+```text
+Loja Universo 4V
+LCP: 2,7 s → 1,2 s
+
+Agência 4V Comunicação
+LCP: 4,1 s → 1,2 s
+
+Projeto Orion
+LCP: 2,1 s → 1,1 s
+
+Revista NaMídia
+LCP: 7,2 s → 1,4 s
+```
+
+A Identidade Visual 4V já apresentava bom desempenho e recebeu apenas a priorização do recurso LCP, reduzindo o indicador de aproximadamente `1,2 s` para `1,1 s`.
+
+Os testes confirmaram que a otimização das imagens trouxe ganhos significativos sem comprometer qualidade visual, responsividade ou acessibilidade.
 
 ## Aprendizados
 
@@ -420,14 +456,18 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * tratamento dos eventos `touchstart` e `touchend`;
 * identificação da direção e da distância dos gestos;
 * diferenciação entre movimentos horizontais e verticais;
-* uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis.
+* uso da propriedade `touch-action` para melhorar a interação em dispositivos móveis;
 * diagnóstico de Largest Contentful Paint com Lighthouse;
 * identificação do elemento responsável pelo LCP;
 * uso de `fetchpriority` para recursos críticos;
 * otimização de imagens com WebP;
 * implementação de imagens responsivas com `<picture>`, `srcset` e `sizes`;
+* identificação de gargalos causados por imagens superdimensionadas;
 * análise dos recursos efetivamente carregados pela aba Network;
-* comparação de métricas antes e depois de uma otimização.
+* validação de `currentSrc` e dos recursos escolhidos pelo navegador;
+* interpretação das recomendações de entrega de imagens do Lighthouse;
+* criação de estratégias de otimização proporcionais ao peso de cada recurso;
+* otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
 
@@ -491,13 +531,15 @@ Versão anterior mantida como registro histórico no repositório remoto.
 
 ## Próximas melhorias
 
-* Avaliar oportunidades de otimização responsiva nas imagens de destaque dos demais estudos de caso.
-* Revisar o peso e a otimização das novas imagens.
+* Revisar o peso e a otimização das imagens complementares das galerias.
 * Adicionar projetos futuros ao portfólio.
 * Ampliar os conhecimentos em JavaScript.
 * Explorar animações leves sem comprometer a acessibilidade.
 * Avaliar futuramente a utilização de um domínio personalizado.
 * Continuar a evolução da identidade pessoal do Projeto Polaris.
+* Avaliar oportunidades de redução de solicitações que bloqueiam a renderização.
+* Revisar estratégias de cache dentro das limitações do GitHub Pages.
+* Realizar uma auditoria geral antes do fechamento da versão `v1.7.0`.
 
 ## Autor
 
