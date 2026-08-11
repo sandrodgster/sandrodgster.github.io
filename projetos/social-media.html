@@ -73,9 +73,26 @@
 
             <div class="case-cover">
 
-                <img src="../images/projetos/social-media.jpg"
-                    alt="Conjunto de peças desenvolvido para campanha em redes sociais" width="1200" height="1697"
-                    decoding="async">
+               <picture>
+    <source
+        type="image/webp"
+        srcset="
+            ../images/projetos/social-media-480.webp 480w,
+            ../images/projetos/social-media-768.webp 768w,
+            ../images/projetos/social-media.webp 1200w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 90vw, 1200px"
+    >
+
+    <img
+        src="../images/projetos/social-media.jpg"
+        alt="Conjunto de peças desenvolvido para campanha em redes sociais"
+        width="1200"
+        height="1697"
+        decoding="async"
+        fetchpriority="high"
+    >
+</picture>
 
             </div>
 
