@@ -375,6 +375,19 @@ nav a:hover {
     background-color: var(--background);
 }
 
+.skills-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 36px;
+}
+
+.skills-group-title {
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
 .skills-grid {
     width: 100%;
     max-width: 1200px;
@@ -399,19 +412,13 @@ nav a:hover {
 }
 
 .skill-card:hover {
-
     transform: translateY(-6px);
-
     border-color: var(--primary);
-
 }
-
-.skill-card h3 {
-
+.skill-card h4 {
     color: var(--primary);
-
     margin-bottom: 10px;
-
+    font-size: 18px;
 }
 
 .skill-card p {
@@ -1315,8 +1322,36 @@ body.lightbox-open {
         margin: -20px auto 40px;
     }
 
+    .skills-container {
+        gap: 32px;
+    }
+
+    .skills-group {
+        min-width: 0;
+    }
+
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .skill-card {
+        min-width: 0;
+        padding: 18px;
+    }
+
+    .skill-card h4 {
+        font-size: 16px;
+    }
+
+    .skill-card p {
+        font-size: 14px;
+        line-height: 1.4;
+        overflow-wrap: break-word;
+    }
+
+    .skills-group-title {
+        margin-bottom: 14px;
     }
 
     .projects-grid {
@@ -1327,10 +1362,13 @@ body.lightbox-open {
         height: 200px;
     }
 
-    .skill-card,
     .project-content,
     .contact-card {
         padding: 24px;
+    }
+
+    .skill-card {
+        padding: 18px;
     }
 
     .contact-content h3 {
@@ -1365,6 +1403,14 @@ body.lightbox-open {
     .lightbox-close {
         top: 8px;
         right: 8px;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
 }
