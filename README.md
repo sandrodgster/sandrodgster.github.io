@@ -6,13 +6,13 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.7.0 — Performance e refinamento da experiência
+**Versão atual:** v1.8.0 — Experiência, conteúdo e refinamento visual
 
-A versão `v1.7.0` consolida uma rodada de otimizações orientadas por métricas, com foco no Largest Contentful Paint (LCP), na entrega responsiva das imagens principais e na priorização dos recursos críticos da página inicial e dos seis estudos de caso.
+A versão `v1.8.0` concentra uma rodada de refinamentos na página principal do portfólio, com foco em clareza da apresentação profissional, organização do conteúdo, consistência visual, responsividade e acessibilidade.
 
-As páginas foram analisadas individualmente com Lighthouse e Chrome DevTools. As capas mais pesadas receberam versões WebP responsivas com `<picture>`, `srcset` e `sizes`, enquanto imagens já leves receberam apenas `fetchpriority="high"` quando isso foi tecnicamente suficiente.
+Foram revisadas as seções Hero, Sobre, Habilidades, Projetos e Contato. As alterações preservam a estrutura técnica e o desempenho consolidados na `v1.7.0`, evitando mudanças desnecessárias em componentes que já apresentavam bom funcionamento.
 
-A versão também passou por uma auditoria final de funcionamento, incluindo Network, Console, navegação por teclado, menu mobile, lightbox, controle de foco, gestos de deslizar e rolagem vertical.
+A versão também passou por uma revisão das microinterações existentes e por uma auditoria final em ambientes desktop e mobile, incluindo navegação por teclado, responsividade, Console, Network e Lighthouse.
 
 ## Visualizar o projeto
 
@@ -294,11 +294,11 @@ A página principal e os estudos de caso possuem:
 
 ## Auditoria Lighthouse
 
-A versão `v1.7.0` foi auditada com Lighthouse e Chrome DevTools, com foco em desempenho, estabilidade, acessibilidade e carregamento dos recursos críticos.
+A versão `v1.8.0` foi submetida a uma nova auditoria da página principal após os refinamentos de conteúdo e experiência. Os testes foram realizados na URL canônica do projeto, em ambientes desktop e mobile.
 
 ### Página principal
 
-Na auditoria mobile final, após a priorização da foto de perfil responsável pelo LCP:
+Na auditoria final da versão `v1.8.0`, a página principal atingiu a pontuação máxima nas quatro categorias avaliadas pelo Lighthouse, tanto em desktop quanto em mobile:
 
 ```text
 Performance: 100
@@ -306,29 +306,10 @@ Acessibilidade: 100
 Boas práticas: 100
 SEO: 100
 
-First Contentful Paint: 0,8 s
-Largest Contentful Paint: 1,0 s
-Total Blocking Time: 50 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,8 s
-```
+Durante a auditoria, foi identificada uma insuficiência de contraste no botão principal do Hero. A correção preservou a cor azul do botão e passou a utilizar uma cor de texto escura, elevando a pontuação de Acessibilidade para 100.
 
-Em uma auditoria desktop da página principal:
+Também foi confirmado que a URL canônica correta da página principal é `https://sandrodgster.github.io/`. A auditoria realizada diretamente nessa URL atingiu SEO 100.
 
-```text
-Performance: 100
-Acessibilidade: 100
-Boas práticas: 100
-SEO: 100
-
-First Contentful Paint: 0,4 s
-Largest Contentful Paint: 0,4 s
-Total Blocking Time: 0 ms
-Cumulative Layout Shift: 0
-Speed Index: 0,4 s
-```
-
-A imagem `images/perfil/sandro-alves.jpg`, já leve, foi mantida em JPEG e recebeu apenas `fetchpriority="high"`. O LCP mobile passou de `1,1 s` para `1,0 s`, sem introduzir complexidade desnecessária.
 
 ### Otimização sistemática das imagens LCP dos estudos de caso
 
@@ -414,13 +395,17 @@ Também foram realizados testes de:
 * Console do navegador sem erros;
 * Network sem respostas `404` ou `5xx`.
 
-A auditoria final confirmou a estabilidade técnica da versão `v1.7.0`.
+A auditoria final confirmou a estabilidade técnica da versão `v1.8.0`.
 
 ### Decisões técnicas da auditoria
 
-O Lighthouse também sinalizou oportunidades relacionadas ao tempo de cache e ao CSS que participa do caminho crítico de renderização. Essas ocorrências não apresentaram impacto mensurável relevante nos testes finais: a página principal permaneceu com Performance 100, e o arquivo CSS é pequeno.
+A auditoria final da `v1.8.0` confirmou que os refinamentos visuais e de conteúdo não provocaram regressões relevantes de desempenho.
 
-Por isso, a versão `v1.7.0` foi encerrada sem adicionar complexidade como critical CSS inline, divisão artificial do stylesheet ou mudanças de infraestrutura apenas para remover alertas de baixo impacto.
+O Lighthouse continuou apresentando oportunidades relacionadas ao tempo de cache e à entrega da imagem de perfil. Como a página principal atingiu Performance 100 e os ganhos estimados eram pequenos, essas recomendações não justificaram aumento de complexidade nesta versão.
+
+A auditoria também confirmou que o `rel="canonical"` da página principal deve apontar para a raiz do domínio. A pontuação reduzida observada em uma execução usando `/index.html` não representava um problema no canonical do projeto.
+
+A correção efetivamente necessária foi o contraste do botão principal do Hero, ajustado durante a auditoria final.
 
 ## Aprendizados
 
@@ -473,6 +458,22 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.8.0 — Experiência, conteúdo e refinamento visual
+
+* Refinamento do conteúdo e da identidade visual do Hero.
+* Atualização da apresentação profissional para destacar design e desenvolvimento front-end.
+* Refinamento dos textos da seção Sobre.
+* Reorganização das Habilidades em grupos de Desenvolvimento e Design.
+* Melhoria da responsividade da seção Habilidades em dispositivos móveis.
+* Refinamento dos textos dos cards de Projetos.
+* Preservação da estrutura responsiva e das microinterações já consolidadas nos projetos.
+* Refinamento do conteúdo e da interação da seção Contato.
+* Adição de sombra discreta nos cards de Contato durante o hover.
+* Revisão geral de hover, foco visível, transições e preferência por redução de movimento.
+* Correção do contraste do botão principal do Hero.
+* Validação funcional de navegação, responsividade, Console e Network.
+* Lighthouse final com Performance, Acessibilidade, Boas práticas e SEO em 100, em desktop e mobile.
 
 ### v1.7.0 — Performance e refinamento da experiência
 
