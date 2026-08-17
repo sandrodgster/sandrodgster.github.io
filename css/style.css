@@ -154,6 +154,28 @@ nav a:hover {
     color: var(--primary);
 }
 
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.language-switcher a {
+    font-weight: 700;
+}
+
+.language-switcher a[aria-current="page"] {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.language-switcher span {
+    opacity: 0.6;
+}
+
 .menu-toggle {
     display: none;
     width: 44px;
@@ -1107,6 +1129,18 @@ body.lightbox-open {
     .main-nav a:hover,
     .main-nav a:focus-visible {
         background-color: var(--background-light);
+    }
+
+    .language-switcher {
+        justify-content: center;
+        gap: 8px;
+        margin-left: 0;
+        padding: 6px 12px;
+    }
+
+    .main-nav .language-switcher a {
+        display: inline-block;
+        padding: 8px;
     }
 
     .hero {
