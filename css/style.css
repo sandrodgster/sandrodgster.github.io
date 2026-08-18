@@ -176,6 +176,16 @@ nav a:hover {
     opacity: 0.6;
 }
 
+.case-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.case-header-actions .language-switcher {
+    margin-left: 0;
+}
+
 .menu-toggle {
     display: none;
     width: 44px;
@@ -1196,6 +1206,21 @@ body.lightbox-open {
 
     header {
         padding: 20px 6%;
+    }
+
+    .case-header-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .case-header-actions .language-switcher {
+        padding: 0;
+    }
+
+    .case-header-actions .btn-outline {
+        width: auto;
     }
 
     .logo {
