@@ -6,13 +6,19 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.8.0 — Experiência, conteúdo e refinamento visual
+**Versão atual:** v1.9.0 — Internacionalização e experiência bilíngue
 
-A versão `v1.8.0` concentra uma rodada de refinamentos na página principal do portfólio, com foco em clareza da apresentação profissional, organização do conteúdo, consistência visual, responsividade e acessibilidade.
+A versão `v1.9.0` internacionaliza o Projeto Orion e consolida uma experiência bilíngue em português e inglês, preservando a estrutura visual, a responsividade, a acessibilidade e o desempenho alcançados nas versões anteriores.
 
-Foram revisadas as seções Hero, Sobre, Habilidades, Projetos e Contato. As alterações preservam a estrutura técnica e o desempenho consolidados na `v1.7.0`, evitando mudanças desnecessárias em componentes que já apresentavam bom funcionamento.
+A página principal passou a contar com uma versão em inglês em `/en/`, acompanhada pelos seis estudos de caso traduzidos em `/en/projects/`. As páginas em português permanecem em suas URLs originais.
 
-A versão também passou por uma revisão das microinterações existentes e por uma auditoria final em ambientes desktop e mobile, incluindo navegação por teclado, responsividade, Console, Network e Lighthouse.
+A navegação entre idiomas foi integrada às duas páginas principais e às doze páginas de estudos de caso, permitindo alternar diretamente entre as versões correspondentes de cada conteúdo.
+
+Também foram implementados `hreflang="pt-BR"`, `hreflang="en"` e `hreflang="x-default"`, além da manutenção de URLs canônicas específicas para cada página.
+
+A versão passou por auditorias estruturais e funcionais envolvendo os 14 documentos HTML da experiência bilíngue, incluindo validação de URLs, metadados, recursos locais, imagens, responsividade, navegação por teclado, Console, Network e publicação pelo GitHub Pages.
+
+Na homologação final da página principal publicada, tanto a versão em português quanto a versão em inglês atingiram Performance, Acessibilidade, Boas práticas e SEO em 100 pontos nas execuções finais de Lighthouse em desktop e mobile.
 
 ## Visualizar o projeto
 
@@ -305,6 +311,7 @@ Performance: 100
 Acessibilidade: 100
 Boas práticas: 100
 SEO: 100
+```
 
 Durante a auditoria, foi identificada uma insuficiência de contraste no botão principal do Hero. A correção preservou a cor azul do botão e passou a utilizar uma cor de texto escura, elevando a pontuação de Acessibilidade para 100.
 
@@ -407,6 +414,44 @@ A auditoria também confirmou que o `rel="canonical"` da página principal deve 
 
 A correção efetivamente necessária foi o contraste do botão principal do Hero, ajustado durante a auditoria final.
 
+### Homologação da internacionalização — v1.9.0
+
+A internacionalização foi homologada após a integração da branch de desenvolvimento à `main` e a publicação da nova estrutura no GitHub Pages.
+
+A auditoria contemplou as duas páginas principais e as doze páginas de estudos de caso, totalizando 14 documentos HTML.
+
+Foram verificados:
+
+* existência e correspondência das versões em português e inglês;
+* presença de uma URL canônica por página;
+* presença dos três links `alternate` com `pt-BR`, `en` e `x-default`;
+* funcionamento do seletor de idioma com indicação da versão ativa;
+* navegação direta entre o mesmo conteúdo em idiomas diferentes;
+* existência dos arquivos e recursos referenciados;
+* carregamento das imagens e recursos responsivos;
+* preservação de `width`, `height`, `loading`, `decoding` e `fetchpriority`;
+* metadados de SEO e compartilhamento;
+* títulos, descrições e estrutura principal de conteúdo;
+* links dos seis estudos de caso na página principal em inglês;
+* responsividade em desktop e mobile;
+* navegação e foco por teclado;
+* Console do navegador sem erros originados pelo projeto;
+* Network sem recursos do projeto retornando `404` ou `5xx`;
+* funcionamento da versão publicada pelo GitHub Pages.
+
+A página principal em português e a página principal em inglês foram novamente submetidas ao Lighthouse no ambiente publicado.
+
+Nas execuções finais em desktop e mobile, ambas atingiram:
+
+```text
+Performance: 100
+Acessibilidade: 100
+Boas práticas: 100
+SEO: 100
+```
+
+A homologação confirmou que a internacionalização foi incorporada sem regressões relevantes na experiência, acessibilidade, responsividade ou desempenho do Projeto Orion.
+
 ## Aprendizados
 
 Durante o desenvolvimento do Projeto Orion, pratiquei:
@@ -458,6 +503,25 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.9.0 — Internacionalização e experiência bilíngue
+
+* Criação da versão em inglês da página principal.
+* Criação das versões em inglês dos seis estudos de caso.
+* Organização da experiência internacional em `/en/` e `/en/projects/`.
+* Atualização dos links da página principal em inglês para os respectivos estudos de caso.
+* Inclusão do seletor de idioma PT/EN nas páginas principais.
+* Inclusão do seletor de idioma PT/EN nas doze páginas de estudos de caso.
+* Navegação direta entre as versões correspondentes de cada estudo de caso.
+* Implementação de `hreflang="pt-BR"`, `hreflang="en"` e `hreflang="x-default"`.
+* Manutenção de URLs canônicas específicas para cada página.
+* Validação estrutural dos 14 documentos HTML da experiência bilíngue.
+* Auditoria de metadados, imagens, recursos locais e caminhos relativos.
+* Validação funcional em desktop e mobile.
+* Validação da navegação por teclado e dos estados de foco.
+* Verificação de Console e Network.
+* Homologação da estrutura publicada no GitHub Pages.
+* Lighthouse final da página principal PT e EN com Performance, Acessibilidade, Boas práticas e SEO em 100, em desktop e mobile.
 
 ### v1.8.0 — Experiência, conteúdo e refinamento visual
 
