@@ -6,19 +6,19 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.9.0 — Internacionalização e experiência bilíngue
+**Versão atual:** v1.10.0 — SEO técnico e descoberta
 
-A versão `v1.9.0` internacionaliza o Projeto Orion e consolida uma experiência bilíngue em português e inglês, preservando a estrutura visual, a responsividade, a acessibilidade e o desempenho alcançados nas versões anteriores.
+A versão `v1.10.0` amplia a base técnica de SEO do Projeto Orion, facilitando a descoberta das páginas públicas e tornando mais explícitas as informações fornecidas aos mecanismos de busca.
 
-A página principal passou a contar com uma versão em inglês em `/en/`, acompanhada pelos seis estudos de caso traduzidos em `/en/projects/`. As páginas em português permanecem em suas URLs originais.
+Foi adicionado um `sitemap.xml` com as 14 URLs canônicas da experiência bilíngue, contemplando as duas páginas principais e os doze estudos de caso em português e inglês.
 
-A navegação entre idiomas foi integrada às duas páginas principais e às doze páginas de estudos de caso, permitindo alternar diretamente entre as versões correspondentes de cada conteúdo.
+Também foi criado um `robots.txt` na raiz do site, permitindo o rastreamento das páginas públicas e indicando diretamente a localização do sitemap.
 
-Também foram implementados `hreflang="pt-BR"`, `hreflang="en"` e `hreflang="x-default"`, além da manutenção de URLs canônicas específicas para cada página.
+A página principal passou a fornecer dados estruturados em JSON-LD com o tipo `WebSite`, identificando o nome do site como `Sandro Alves` e sua URL principal por meio do vocabulário Schema.org.
 
-A versão passou por auditorias estruturais e funcionais envolvendo os 14 documentos HTML da experiência bilíngue, incluindo validação de URLs, metadados, recursos locais, imagens, responsividade, navegação por teclado, Console, Network e publicação pelo GitHub Pages.
+A implementação passou por auditoria local envolvendo os 14 documentos HTML, com validação de URLs canônicas, `hreflang`, idiomas, sitemap, `robots.txt` e dados estruturados, sem inconsistências detectadas.
 
-Na homologação final da página principal publicada, tanto a versão em português quanto a versão em inglês atingiram Performance, Acessibilidade, Boas práticas e SEO em 100 pontos nas execuções finais de Lighthouse em desktop e mobile.
+Na homologação em produção, `robots.txt` e `sitemap.xml` responderam com HTTP 200, as 14 URLs presentes no sitemap responderam com HTTP 200 e o JSON-LD publicado na página principal foi validado com sucesso.
 
 ## Visualizar o projeto
 
@@ -452,6 +452,39 @@ SEO: 100
 
 A homologação confirmou que a internacionalização foi incorporada sem regressões relevantes na experiência, acessibilidade, responsividade ou desempenho do Projeto Orion.
 
+### Homologação do SEO técnico — v1.10.0
+
+O SEO técnico foi homologado após a integração da branch de desenvolvimento à `main` e a publicação das alterações pelo GitHub Pages.
+
+A auditoria local contemplou os 14 documentos HTML da experiência bilíngue e os novos arquivos destinados à descoberta e ao rastreamento do site.
+
+Foram verificados:
+
+* correspondência entre as 14 URLs canônicas e as 14 URLs do `sitemap.xml`;
+* ausência de URLs duplicadas no sitemap;
+* validade estrutural do XML;
+* presença e correspondência dos atributos `lang`;
+* presença de uma URL canônica por documento HTML;
+* presença dos três links `alternate` com `pt-BR`, `en` e `x-default`;
+* validade do `robots.txt`;
+* referência do `robots.txt` ao sitemap publicado;
+* presença de um único JSON-LD do tipo `WebSite` na página principal;
+* ausência desse JSON-LD na página principal em inglês;
+* validade do conteúdo JSON-LD;
+* ausência de inconsistências na auditoria SEO local.
+
+Na homologação do ambiente publicado pelo GitHub Pages:
+
+* `robots.txt` respondeu com HTTP 200 e `Content-Type` compatível com texto;
+* `sitemap.xml` respondeu com HTTP 200 e `Content-Type` XML;
+* o sitemap publicado foi interpretado como XML válido;
+* foram confirmadas 14 URLs no sitemap publicado;
+* as 14 URLs responderam individualmente com HTTP 200;
+* o JSON-LD publicado na página principal foi encontrado e interpretado corretamente;
+* o objeto `WebSite` publicado confirmou `https://schema.org`, o tipo `WebSite`, o nome `Sandro Alves` e a URL principal do portfólio.
+
+A homologação confirmou a publicação da nova infraestrutura de SEO técnico sem alterações nas URLs existentes da experiência bilíngue.
+
 ## Aprendizados
 
 Durante o desenvolvimento do Projeto Orion, pratiquei:
@@ -503,6 +536,22 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.10.0 — SEO técnico e descoberta
+
+* Criação do `sitemap.xml` com as 14 URLs canônicas públicas do Projeto Orion.
+* Inclusão das páginas principais e dos doze estudos de caso em português e inglês no sitemap.
+* Validação da correspondência entre sitemap e URLs canônicas.
+* Verificação de ausência de URLs duplicadas no sitemap.
+* Criação do `robots.txt` com liberação do rastreamento das páginas públicas.
+* Inclusão da referência ao `sitemap.xml` no `robots.txt`.
+* Implementação de dados estruturados em JSON-LD na página principal.
+* Uso do tipo `WebSite` com nome e URL principal do portfólio.
+* Preservação da estrutura de `canonical` e `hreflang` dos 14 documentos HTML.
+* Auditoria SEO local dos 14 documentos sem inconsistências detectadas.
+* Homologação de `robots.txt` e `sitemap.xml` no GitHub Pages com HTTP 200.
+* Validação das 14 URLs publicadas do sitemap com HTTP 200.
+* Validação do JSON-LD `WebSite` diretamente no ambiente publicado.
 
 ### v1.9.0 — Internacionalização e experiência bilíngue
 
