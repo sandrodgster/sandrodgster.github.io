@@ -6,17 +6,28 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.10.1 — SEO operacional e previews sociais
+**Versão atual:** v1.11.0 — Dados estruturados semânticos
 
-A versão `v1.10.1` consolida ajustes operacionais realizados após a `v1.10.0`, com foco na verificação da propriedade do site no Google Search Console e no aprimoramento dos previews sociais dos estudos de caso.
+A versão `v1.11.0` amplia a estrutura semântica do Projeto Orion com a implementação de dados estruturados em JSON-LD nos doze estudos de caso da experiência bilíngue.
 
-Foi adicionado à raiz do projeto o arquivo HTML de verificação fornecido pelo Google Search Console, preservando o método de verificação da propriedade `https://sandrodgster.github.io/`.
+As seis páginas em português e as seis páginas em inglês passaram a utilizar o tipo `CreativeWork`, com informações derivadas dos próprios metadados e conteúdos de cada documento.
 
-Os estudos de caso Identidade Visual 4V Comunicação, Revista NaMídia e Campanha para Redes Sociais passaram a utilizar imagens horizontais já existentes no projeto em `og:image` e `twitter:image`, tanto nas versões em português quanto em inglês.
+Cada estudo de caso passou a declarar:
 
-As alterações foram realizadas somente nos metadados sociais, sem modificar as imagens apresentadas no conteúdo dos estudos de caso e sem adicionar novos assets ao repositório.
+* `name`, correspondente ao título principal `h1`;
+* `description`, correspondente à meta description;
+* `url`, correspondente à URL canônica;
+* `mainEntityOfPage`, correspondente à URL canônica;
+* `image`, correspondente à imagem definida em `og:image`;
+* `inLanguage`, correspondente ao idioma declarado no elemento `html`.
 
-Na homologação em produção, as seis páginas atualizadas responderam com HTTP 200 e apresentaram os novos valores de `og:image` e `twitter:image` corretamente publicados e correspondentes entre si.
+A implementação mantém o JSON-LD do tipo `WebSite` já existente exclusivamente na página principal em português e não adiciona dados estruturados à página principal em inglês.
+
+Na auditoria local, os doze estudos de caso foram validados individualmente e em conjunto, com um bloco JSON-LD válido por página e sem inconsistências entre os dados estruturados e os respectivos elementos HTML.
+
+Na homologação em produção pelo GitHub Pages, as doze páginas responderam com HTTP 200 e apresentaram seus respectivos blocos `CreativeWork` corretamente publicados e válidos.
+
+Com essa evolução, o site passa a possuir treze blocos JSON-LD no total: um objeto `WebSite` na página principal em português e doze objetos `CreativeWork` distribuídos pelos estudos de caso em português e inglês.
 
 ## Visualizar o projeto
 
@@ -296,6 +307,16 @@ A página principal e os estudos de caso possuem:
 * favicon;
 * cor do navegador em dispositivos compatíveis.
 
+### Dados estruturados
+
+Os dados estruturados em JSON-LD complementam os metadados de SEO do projeto:
+
+* a página principal em português utiliza um objeto do tipo `WebSite`;
+* os doze estudos de caso utilizam objetos do tipo `CreativeWork`;
+* cada `CreativeWork` mantém correspondência com o título principal, a meta description, a URL canônica, a imagem de compartilhamento e o idioma da respectiva página;
+* a página principal em inglês permanece sem JSON-LD;
+* o site possui treze blocos JSON-LD no total.
+
 ## Auditoria Lighthouse
 
 A versão `v1.8.0` foi submetida a uma nova auditoria da página principal após os refinamentos de conteúdo e experiência. Os testes foram realizados na URL canônica do projeto, em ambientes desktop e mobile.
@@ -511,6 +532,37 @@ Na homologação em produção:
 
 A homologação confirmou a melhoria dos previews sociais sem regressões estruturais nas páginas dos estudos de caso.
 
+### Homologação dos dados estruturados semânticos — v1.11.0
+
+A implementação dos dados estruturados nos estudos de caso foi homologada após a integração das alterações à `main` e a publicação pelo GitHub Pages.
+
+Os doze estudos de caso da experiência bilíngue passaram a possuir um bloco JSON-LD do tipo `CreativeWork`, sendo seis páginas em português e seis páginas em inglês.
+
+Na auditoria local, foram verificados:
+
+* presença de exatamente um bloco JSON-LD em cada estudo de caso;
+* validade sintática dos doze blocos JSON-LD;
+* uso de `https://schema.org` como contexto;
+* uso do tipo `CreativeWork`;
+* correspondência de `name` com o `h1`;
+* correspondência de `description` com a meta description;
+* correspondência de `url` e `mainEntityOfPage` com a URL canônica;
+* correspondência de `image` com `og:image`;
+* correspondência de `inLanguage` com o idioma declarado no elemento `html`;
+* ausência de inconsistências nos doze estudos de caso.
+
+A auditoria geral confirmou a manutenção de um único objeto `WebSite` na página principal em português, a ausência de JSON-LD na página principal em inglês e a existência de treze blocos JSON-LD no site.
+
+Na homologação em produção pelo GitHub Pages:
+
+* os doze estudos de caso responderam com HTTP 200;
+* cada página apresentou exatamente um bloco JSON-LD;
+* os doze objetos `CreativeWork` foram interpretados corretamente;
+* os dados estruturados permaneceram correspondentes aos respectivos conteúdos e metadados HTML;
+* nenhuma das doze páginas apresentou inconsistências na auditoria de produção.
+
+A homologação confirmou a publicação dos dados estruturados semânticos nos estudos de caso sem alteração das URLs existentes da experiência bilíngue.
+
 ## Aprendizados
 
 Durante o desenvolvimento do Projeto Orion, pratiquei:
@@ -562,6 +614,22 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.11.0 — Dados estruturados semânticos
+
+* Implementação de dados estruturados em JSON-LD nos doze estudos de caso.
+* Uso do tipo `CreativeWork` nas seis páginas em português e nas seis páginas em inglês.
+* Correspondência de `name` com o título principal `h1` de cada estudo de caso.
+* Correspondência de `description` com a meta description de cada página.
+* Correspondência de `url` e `mainEntityOfPage` com a URL canônica.
+* Correspondência de `image` com a imagem definida em `og:image`.
+* Correspondência de `inLanguage` com o idioma declarado no elemento `html`.
+* Preservação do objeto `WebSite` existente exclusivamente na página principal em português.
+* Manutenção da página principal em inglês sem JSON-LD.
+* Auditoria local dos doze estudos de caso com 12 páginas válidas e nenhuma inconsistência detectada.
+* Confirmação de treze blocos JSON-LD no site: um `WebSite` e doze `CreativeWork`.
+* Homologação em produção dos doze estudos de caso com HTTP 200.
+* Validação em produção de um bloco `CreativeWork` por estudo de caso, sem inconsistências detectadas.
 
 ### v1.10.1 — SEO operacional e previews sociais
 
