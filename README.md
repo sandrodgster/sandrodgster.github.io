@@ -6,19 +6,17 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.10.0 — SEO técnico e descoberta
+**Versão atual:** v1.10.1 — SEO operacional e previews sociais
 
-A versão `v1.10.0` amplia a base técnica de SEO do Projeto Orion, facilitando a descoberta das páginas públicas e tornando mais explícitas as informações fornecidas aos mecanismos de busca.
+A versão `v1.10.1` consolida ajustes operacionais realizados após a `v1.10.0`, com foco na verificação da propriedade do site no Google Search Console e no aprimoramento dos previews sociais dos estudos de caso.
 
-Foi adicionado um `sitemap.xml` com as 14 URLs canônicas da experiência bilíngue, contemplando as duas páginas principais e os doze estudos de caso em português e inglês.
+Foi adicionado à raiz do projeto o arquivo HTML de verificação fornecido pelo Google Search Console, preservando o método de verificação da propriedade `https://sandrodgster.github.io/`.
 
-Também foi criado um `robots.txt` na raiz do site, permitindo o rastreamento das páginas públicas e indicando diretamente a localização do sitemap.
+Os estudos de caso Identidade Visual 4V Comunicação, Revista NaMídia e Campanha para Redes Sociais passaram a utilizar imagens horizontais já existentes no projeto em `og:image` e `twitter:image`, tanto nas versões em português quanto em inglês.
 
-A página principal passou a fornecer dados estruturados em JSON-LD com o tipo `WebSite`, identificando o nome do site como `Sandro Alves` e sua URL principal por meio do vocabulário Schema.org.
+As alterações foram realizadas somente nos metadados sociais, sem modificar as imagens apresentadas no conteúdo dos estudos de caso e sem adicionar novos assets ao repositório.
 
-A implementação passou por auditoria local envolvendo os 14 documentos HTML, com validação de URLs canônicas, `hreflang`, idiomas, sitemap, `robots.txt` e dados estruturados, sem inconsistências detectadas.
-
-Na homologação em produção, `robots.txt` e `sitemap.xml` responderam com HTTP 200, as 14 URLs presentes no sitemap responderam com HTTP 200 e o JSON-LD publicado na página principal foi validado com sucesso.
+Na homologação em produção, as seis páginas atualizadas responderam com HTTP 200 e apresentaram os novos valores de `og:image` e `twitter:image` corretamente publicados e correspondentes entre si.
 
 ## Visualizar o projeto
 
@@ -485,6 +483,34 @@ Na homologação do ambiente publicado pelo GitHub Pages:
 
 A homologação confirmou a publicação da nova infraestrutura de SEO técnico sem alterações nas URLs existentes da experiência bilíngue.
 
+### Homologação operacional e de previews sociais — v1.10.1
+
+Após a versão `v1.10.0`, o Projeto Orion recebeu ajustes complementares relacionados à integração com mecanismos de busca e à apresentação dos estudos de caso em compartilhamentos sociais.
+
+Foi adicionado à raiz do projeto o arquivo HTML fornecido pelo Google Search Console para verificação da propriedade do site. O arquivo foi publicado pelo GitHub Pages e utilizado com sucesso no processo de verificação.
+
+Também foi realizada uma auditoria das imagens utilizadas pelos metadados Open Graph e Twitter Card dos 14 documentos HTML. A estrutura dos metadados sociais foi confirmada como completa, sem ausência das propriedades essenciais avaliadas.
+
+A análise visual e dimensional identificou oportunidades de melhoria em três estudos de caso que utilizavam imagens verticais ou menos adequadas ao formato de preview social.
+
+Foram atualizados os metadados `og:image` e `twitter:image` das versões em português e inglês de:
+
+* Identidade Visual 4V Comunicação;
+* Revista NaMídia;
+* Campanha para Redes Sociais.
+
+As novas referências reutilizam imagens horizontais já existentes no repositório, sem criação de novos arquivos e sem alteração das imagens exibidas no conteúdo das páginas.
+
+Na homologação em produção:
+
+* as seis páginas atualizadas responderam com HTTP 200;
+* os seis valores de `og:image` corresponderam às imagens esperadas;
+* os seis valores de `twitter:image` corresponderam às imagens esperadas;
+* `og:image` e `twitter:image` permaneceram iguais em cada página;
+* todos os arquivos de imagem utilizados foram confirmados no ambiente publicado.
+
+A homologação confirmou a melhoria dos previews sociais sem regressões estruturais nas páginas dos estudos de caso.
+
 ## Aprendizados
 
 Durante o desenvolvimento do Projeto Orion, pratiquei:
@@ -536,6 +562,19 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.10.1 — SEO operacional e previews sociais
+
+* Inclusão do arquivo HTML de verificação do Google Search Console na raiz do projeto.
+* Verificação da propriedade pública do Projeto Orion no Google Search Console.
+* Auditoria dos metadados Open Graph e Twitter Card dos 14 documentos HTML.
+* Revisão visual e dimensional das imagens utilizadas nos previews sociais.
+* Atualização de `og:image` e `twitter:image` nos estudos de caso de Identidade Visual 4V Comunicação, Revista NaMídia e Campanha para Redes Sociais.
+* Aplicação das alterações nas versões em português e inglês dos três estudos de caso.
+* Reutilização de imagens horizontais já existentes no repositório.
+* Preservação das imagens apresentadas no conteúdo dos estudos de caso.
+* Homologação das seis páginas atualizadas no GitHub Pages com HTTP 200.
+* Validação da correspondência entre `og:image`, `twitter:image` e os novos arquivos publicados.
 
 ### v1.10.0 — SEO técnico e descoberta
 
