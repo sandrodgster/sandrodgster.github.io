@@ -6,6 +6,54 @@ if (currentYearElement) {
     currentYearElement.textContent = new Date().getFullYear();
 }
 
+/* =====================================================
+   IDIOMA E TEXTOS ACESSÍVEIS
+===================================================== */
+
+const pageLanguage =
+    document.documentElement.lang.toLowerCase();
+
+const isEnglish =
+    pageLanguage.startsWith("en");
+
+const a11yText = isEnglish
+    ? {
+        openMenu: "Open menu",
+        closeMenu: "Close menu",
+        galleryDialog: "Expanded gallery view",
+        closeImage: "Close enlarged image",
+        previousImage: "View previous image",
+        nextImage: "View next image",
+        enlargedImageFallback: "Enlarged project image",
+        projectImage: "project image",
+
+        imageCounter(current, total) {
+            return `Image ${current} of ${total}`;
+        },
+
+        enlargeImage(label) {
+            return `Enlarge image: ${label}`;
+        }
+    }
+    : {
+        openMenu: "Abrir menu",
+        closeMenu: "Fechar menu",
+        galleryDialog: "Visualização ampliada da galeria",
+        closeImage: "Fechar imagem ampliada",
+        previousImage: "Visualizar imagem anterior",
+        nextImage: "Visualizar próxima imagem",
+        enlargedImageFallback: "Imagem ampliada do projeto",
+        projectImage: "imagem do projeto",
+
+        imageCounter(current, total) {
+            return `Imagem ${current} de ${total}`;
+        },
+
+        enlargeImage(label) {
+            return `Ampliar imagem: ${label}`;
+        }
+    };
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
@@ -21,7 +69,7 @@ if (menuToggle && mainNav) {
 
         menuToggle.setAttribute(
             "aria-label",
-            isOpen ? "Fechar menu" : "Abrir menu"
+            isOpen ? a11yText.closeMenu : a11yText.openMenu
         );
     }
 
@@ -86,12 +134,12 @@ if (galleryImages.length > 0) {
             class="lightbox-dialog"
             role="dialog"
             aria-modal="true"
-            aria-label="Visualização ampliada da galeria"
+            aria-label="${a11yText.galleryDialog}"
         >
             <button
                 class="lightbox-close"
                 type="button"
-                aria-label="Fechar imagem ampliada"
+                aria-label="${a11yText.closeImage}"
             >
                 ×
             </button>
@@ -101,7 +149,7 @@ if (galleryImages.length > 0) {
                 <button
                     class="lightbox-nav lightbox-prev"
                     type="button"
-                    aria-label="Visualizar imagem anterior"
+                    aria-label="${a11yText.previousImage}"
                 >
                     ‹
                 </button>
@@ -115,7 +163,7 @@ if (galleryImages.length > 0) {
                 <button
                     class="lightbox-nav lightbox-next"
                     type="button"
-                    aria-label="Visualizar próxima imagem"
+                    aria-label="${a11yText.nextImage}"
                 >
                     ›
                 </button>
@@ -187,7 +235,7 @@ if (galleryImages.length > 0) {
             selectedImage.currentSrc || selectedImage.src;
 
         lightboxImage.alt =
-            selectedImage.alt || "Imagem ampliada do projeto";
+            selectedImage.alt || a11yText.enlargedImageFallback;
 
         const caption =
             getImageCaption(selectedImage);
@@ -196,7 +244,10 @@ if (galleryImages.length > 0) {
         lightboxCaption.hidden = !caption;
 
         lightboxCounter.textContent =
-            `Imagem ${currentImageIndex + 1} de ${totalImages}`;
+            a11yText.imageCounter(
+                currentImageIndex + 1,
+                totalImages
+            );
 
         const hasMultipleImages =
             totalImages > 1;
@@ -310,7 +361,9 @@ if (galleryImages.length > 0) {
 
         trigger.setAttribute(
             "aria-label",
-            `Ampliar imagem: ${image.alt || "imagem do projeto"}`
+            a11yText.enlargeImage(
+                image.alt || a11yText.projectImage
+            )
         );
 
         trigger.setAttribute(
