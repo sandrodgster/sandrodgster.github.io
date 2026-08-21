@@ -6,28 +6,36 @@ O Projeto Orion une minha experiência como designer à evolução dos meus conh
 
 ## Versão atual
 
-**Versão atual:** v1.11.0 — Dados estruturados semânticos
+**Versão atual:** v1.12.0 — Acessibilidade e navegação por teclado
 
-A versão `v1.11.0` amplia a estrutura semântica do Projeto Orion com a implementação de dados estruturados em JSON-LD nos doze estudos de caso da experiência bilíngue.
+A versão `v1.12.0` reforça a acessibilidade e a navegação por teclado do Projeto Orion nas 14 páginas da experiência bilíngue.
 
-As seis páginas em português e as seis páginas em inglês passaram a utilizar o tipo `CreativeWork`, com informações derivadas dos próprios metadados e conteúdos de cada documento.
+Todas as páginas em português e inglês passaram a incluir um link de salto para o conteúdo principal, permitindo que usuários de teclado ignorem diretamente a navegação do cabeçalho e avancem para a área principal da página.
 
-Cada estudo de caso passou a declarar:
+A implementação adiciona:
 
-* `name`, correspondente ao título principal `h1`;
-* `description`, correspondente à meta description;
-* `url`, correspondente à URL canônica;
-* `mainEntityOfPage`, correspondente à URL canônica;
-* `image`, correspondente à imagem definida em `og:image`;
-* `inLanguage`, correspondente ao idioma declarado no elemento `html`.
+* link de salto acessível em todos os 14 documentos HTML;
+* destino único `#main-content` associado ao elemento `main`;
+* texto localizado em português e inglês para o link de salto;
+* manutenção do foco visível durante a navegação por teclado.
 
-A implementação mantém o JSON-LD do tipo `WebSite` já existente exclusivamente na página principal em português e não adiciona dados estruturados à página principal em inglês.
+O JavaScript compartilhado também passou a identificar o idioma declarado no elemento `html` e utilizar textos acessíveis específicos para português e inglês.
 
-Na auditoria local, os doze estudos de caso foram validados individualmente e em conjunto, com um bloco JSON-LD válido por página e sem inconsistências entre os dados estruturados e os respectivos elementos HTML.
+Os rótulos dinâmicos do menu mobile e do lightbox passaram a respeitar o idioma de cada página, incluindo:
 
-Na homologação em produção pelo GitHub Pages, as doze páginas responderam com HTTP 200 e apresentaram seus respectivos blocos `CreativeWork` corretamente publicados e válidos.
+* abertura e fechamento do menu;
+* identificação do diálogo da galeria;
+* fechamento da imagem ampliada;
+* navegação para a imagem anterior e seguinte;
+* contador de posição da imagem;
+* texto alternativo de fallback;
+* rótulo dos botões utilizados para ampliar as imagens.
 
-Com essa evolução, o site passa a possuir treze blocos JSON-LD no total: um objeto `WebSite` na página principal em português e doze objetos `CreativeWork` distribuídos pelos estudos de caso em português e inglês.
+A homologação funcional confirmou o funcionamento do menu e do lightbox em português e inglês, incluindo navegação pelas teclas de seta, fechamento com `Escape`, gerenciamento de foco e atualização correta dos estados e rótulos acessíveis.
+
+A auditoria final das 14 páginas confirmou a presença correta de idioma, link de salto, destino `main-content`, estrutura semântica, textos alternativos, ausência de IDs duplicados e carregamento do JavaScript compartilhado.
+
+Também foram preservados os recursos existentes de foco visível e suporte à preferência `prefers-reduced-motion`.
 
 ## Visualizar o projeto
 
@@ -273,24 +281,34 @@ Entre os ajustes responsivos estão:
 
 ## Acessibilidade
 
-O projeto inclui recursos básicos de acessibilidade:
+O projeto incorpora recursos de acessibilidade voltados à navegação por teclado, leitura semântica e interação com componentes dinâmicos.
 
-* HTML semântico;
-* textos alternativos em imagens;
+Entre os recursos implementados estão:
+
+* HTML semântico e identificação do idioma principal de cada página;
+* link de salto para o conteúdo principal em todos os 14 documentos HTML;
+* destino `#main-content` associado ao elemento `main`;
+* texto do link de salto localizado em português e inglês;
+* textos alternativos nas imagens;
 * legendas nas imagens das galerias;
+* foco visível durante a navegação por teclado;
 * atributos ARIA no menu mobile;
-* estado atualizado com `aria-expanded`;
-* foco visível para teclado;
+* atualização do estado do menu com `aria-expanded`;
+* rótulos acessíveis do menu adaptados ao idioma da página;
 * fechamento do menu pela tecla `Escape`;
 * retorno do foco ao botão do menu;
+* abertura das imagens da galeria por teclado;
 * uso de `role="dialog"` e `aria-modal="true"` no lightbox;
+* rótulos acessíveis do lightbox adaptados ao português e ao inglês;
+* navegação entre imagens pelas teclas de seta;
+* fechamento do lightbox pela tecla `Escape`;
 * manutenção do foco dentro do diálogo;
 * retorno do foco ao elemento que abriu o lightbox;
+* contador acessível de posição das imagens em português e inglês;
 * suporte a `prefers-reduced-motion`;
 * contraste visual revisado;
 * áreas de clique adaptadas para dispositivos móveis;
-* definição de largura e altura nas imagens;
-* identificação do idioma principal da página.
+* definição de largura e altura nas imagens para maior estabilidade de layout.
 
 ## SEO e compartilhamento
 
@@ -614,6 +632,25 @@ Durante o desenvolvimento do Projeto Orion, pratiquei:
 * otimização orientada por métricas antes e depois das alterações.
 
 ## Histórico recente
+
+### v1.12.0 — Acessibilidade e navegação por teclado
+
+* Inclusão de link de salto para o conteúdo principal nos 14 documentos HTML.
+* Associação do link de salto ao destino único `#main-content` no elemento `main`.
+* Localização do texto do link de salto em português e inglês.
+* Preservação do foco visível durante a navegação por teclado.
+* Implementação de detecção do idioma da página no JavaScript compartilhado.
+* Adaptação dos rótulos acessíveis do menu mobile para português e inglês.
+* Adaptação dos rótulos acessíveis do lightbox para português e inglês.
+* Localização dos controles de fechar, imagem anterior e próxima imagem.
+* Localização do contador de posição das imagens.
+* Inclusão de textos alternativos de fallback específicos por idioma.
+* Localização dos rótulos utilizados nos botões de ampliação das imagens.
+* Homologação manual do menu mobile em português e inglês, incluindo abertura, fechamento e tecla `Escape`.
+* Homologação manual do lightbox em português e inglês, incluindo navegação por setas, contador, fechamento com `Escape` e retorno do foco.
+* Auditoria estrutural das 14 páginas com idioma, link de salto, `main-content`, landmarks, `h1`, textos alternativos e IDs únicos validados.
+* Preservação do suporte a `prefers-reduced-motion` e dos estilos de foco visível.
+* Auditoria final concluída com as 14 páginas aprovadas e sem inconsistências detectadas.
 
 ### v1.11.0 — Dados estruturados semânticos
 
